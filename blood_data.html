@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+ 
+	<head>
+		<meta charset="utf-8">
+		<title>ECahrt 示例</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<!--标准mui.css-->
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+		<link href="css/mui.min.css" rel="stylesheet"/>
+		<link href="css/blood/bs_main.css" rel="stylesheet"/>
+		<!-- <link rel="stylesheet" type="text/css" href="../css/app.css" /> -->
+		<style>
+			.chart {
+				height: 200px;
+				margin: 0px;
+				padding: 0px;
+			}
+			h5 {
+				margin-top: 30px;
+				font-weight: bold;
+			}
+			h5:first-child {
+				margin-top: 15px;
+			}
+		</style>
+		<script src="../js/mui.min.js"></script>
+		<script type="text/javascript">  
+			 if(window.localStorage){  
+			 var un = localStorage.getItem("username");  
+			 var pas = localStorage.getItem("password");  
+			 //alert(un+pas);  
+			 }else{alert("浏览不支持localStorage")}  
+		 </script>
+	</head>
+ 
+	<body>
+		<header class="mui-bar mui-bar-nav" style="	background: lightskyblue;
+	height: 60px;">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" href="blood_main_head.html"  style="color: #FFFFFF;
+	margin-top: 10px;"></a>
+			<h1 class="mui-title"  style="font-size: x-large;
+	font-family:verdana;
+	top: 10px;">血糖统计</h1>
+		</header>
+		<br>
+		<div class="mui-content">
+			<div class="mui-content-padded">
+				
+			</div>
+			<div class="mui-content-padded">
+				<h5>7天血糖和糖化血红蛋白值</h5>
+				<div class="chart" id="lineChart"></div>
+				<h5>血糖高低分布天数</h5>
+				<div class="chart" id="pieChart"></div>
+			</div>
+		</div>
+		
+		<script src="js/echarts.min.js"></script>
+		<script>
+			var getOption = function(chartType) {
+				//利用三目判断根据图形的样式选取不同类型的数据，bar和line的数据格式相同，pie格式与前两者不同
+				var chartOption = chartType == 'pie' ? {
+					calculable: false,
+					series: [{
+						name: '访问来源',
+						type: 'pie',
+						radius: '70%',//管理图形大小占比的
+						center: ['50%', '50%'],//管理图形水平位置的
+						data: [{
+							value: 335,
+							name: '血糖正常'
+						}, {
+							value: 310,
+							name: '血糖偏低'
+						}, {
+							value: 234,
+							name: '血糖偏高'
+						}]
+					}]
+				} : {
+					legend: {//标题
+						data: ['糖化血红蛋白', '血糖值']
+					},
+					grid: {
+						x: 30,
+						x2: 30,
+						y: 30,
+						y2: 30
+					},
+					toolbox: {//工具箱
+						show: false,
+						feature: {
+							mark: {
+								show: true
+							},
+							dataView: {
+								show: true,
+								readOnly: false
+							},
+							magicType: {
+								show: true,
+								type: ['line', 'bar']
+							},
+							restore: {
+								show: true
+							},
+							saveAsImage: {
+								show: true
+							}
+						}
+					},
+					calculable: false,
+					//横纵轴刻度
+					xAxis: [{
+						type: 'category',
+						data: ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']
+					}],
+					yAxis: [{
+						name:'mmoll/L',
+						type: 'value',
+					},
+					{
+						name: '%',
+						type:'value'
+					}],
+					//显示数据  此处数据名的名称还要与标题的名称相对应，否则无法显示
+					series: [{
+						name: '糖化血红蛋白',
+						type: chartType,
+						yAxisIndex:1,
+						data: [2.0, 4.9, 7.0, 2.2, 2, 7, 13]
+					}, {
+						name: '血糖值',
+						type: chartType,
+						yAxisIndex:0,
+						data: [2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6]
+					}]
+				};
+				return chartOption;
+			};
+			
+			
+			var byId = function(id) {
+				return document.getElementById(id);
+			};
+			var lineChart = echarts.init(byId('lineChart'));
+			lineChart.setOption(getOption('line'));
+			var pieChart = echarts.init(byId('pieChart'));
+			pieChart.setOption(getOption('pie'));
+			byId("echarts").addEventListener('tap',function(){
+				var url = this.getAttribute('data-url');
+				plus.runtime.openURL(url);
+			},false);
+		</script>
+		
+		
+	</body>
+ 
+ 
+</html>

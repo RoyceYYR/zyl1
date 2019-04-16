@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="css/mine/bootstrap-grid.min.css"/>
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<link rel="stylesheet" type="text/css" href="css/doctor/doctor_patient_detail.css"/>
+		<link href="css/blood/bs_main.css" rel="stylesheet"/>
+		<!-- <link rel="stylesheet" type="text/css" href="../css/app.css" /> -->
+		<script src="svg/iconfont.js" type="text/javascript" charset="utf-8"></script>
+		
+			<style>
+				.icon {
+				width: 45px;
+				height: 45px;
+				vertical-align: -0.15em;
+				fill: currentColor;
+				overflow: hidden;
+			}
+		
+			.chart {
+				height: 200px;
+				width: auto;
+				margin: 0px;
+				padding: 0px;
+			}
+			h5 {
+				margin-top: 30px;
+				font-weight: bold;
+			}
+			h5:first-child {
+				margin-top: 15px;
+			}
+		</style>
+		<script src="../js/mui.min.js"></script>
+		<title></title>
+				<script type="text/javascript">  
+			 if(window.localStorage){  
+			 var un = localStorage.getItem("username");  
+			 var pas = localStorage.getItem("password");  
+			 //alert(un+pas);  
+			 }else{alert("浏览不支持localStorage")}  
+		</script>
+	</head>
+	<body style="background: #F0F0F0;">
+		<header class="mui-bar mui-bar-nav" style="	background: lightskyblue;
+		height: 60px;">
+				<a id="backBtn" href="doctor_abnormal_head.html" class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" style="color: #FFFFFF;
+		margin-top: 10px;"></a>
+				<h1 class="mui-title"  style="font-size: x-large;
+		font-family:verdana;
+		top: 10px;">查询结果</h1>
+			</header>
+		
+		<div class="mui-card"  style="margin-top: 80px;">
+		<div class="mui-card-header mui-card-media">
+			<img src="img/patient.png"  style="width: 90px;height: 90px; margin: 8px;"/>
+			<div class="mui-media-body">
+				<h2>姓名：XXXX</h2> 
+				<h2>糖友号：XXXXX</h2>
+			</div>
+		</div>
+	</div>
+	
+				<a class="mui-tab-item" id="1" style="left: 20px;">
+				
+					<svg class="icon" aria-hidden="true">
+						<use xlink:href="#icon-xingbie1"></use>
+					</svg>
+					<span class="mui-tab-label" style="text-align: center;"><h4 style="color:#1296db">女</h4></span>
+				</a>
+				
+				<a class="mui-tab-item" id="2" style="right:55%;" >
+					<!-- <span class="iconfont icon-shuimian"></span> -->
+					<svg class="icon" aria-hidden="true">
+						<use xlink:href="#icon-nianling"></use>
+					</svg>
+					<span class="mui-tab-label"><h4 style="color:#1296db">46岁</h4></span>
+				</a>
+				
+				<a class="mui-tab-item" id="3" style="left: 55%;">
+					<!-- <span class="iconfont icon-iconxt"></span> -->
+					<svg class="icon" aria-hidden="true">
+						<use xlink:href="#icon-bingshi"></use>
+					</svg>
+					<span class="mui-tab-label" ><h4 style="color:#1296db">5年</h4></span>
+				</a>
+				
+				<a class="mui-tab-item" id="4" style="right: 20px;"> 
+					
+					<svg class="icon" aria-hidden="true" >
+						<use xlink:href="#icon-bingfazheng"></use>
+					</svg>
+					<span class="mui-tab-label" ><h4 style="color:#1296db">糖尿病足</h4></span>
+				</a>
+
+
+				
+		
+		
+		<!-- <div class="mui-card">
+		<div class="mui-card-header">查询结果：</div>
+		<div class="mui-card-content">
+			<img src="img/graph.png"  >
+		</div>
+		<div class="mui-card-footer">得分XXXX，您需要提醒XXXXX</div>
+		</div>
+		
+		<ul class="mui-table-view" style="margin-top: 45px;">
+			 <li class="mui-table-view-cell" onclick="openShare();">
+			    <a class="mui-navigate-right"><h4>分享数据给病人</h4></a>
+			</li>
+			 <li class="mui-table-view-cell" onclick="openAlert();">
+			    <a class="mui-navigate-right"><h4>分享数据给家属</h4></a>
+			</li>
+		</ul> -->
+	
+	<!-- <script type="text/javascript">
+		function openPatient(){
+		    mui.openWindow({
+			url    : 'doctor_patient_head.html',
+			extras :
+			{}
+		    });
+		}
+	</script>
+	<script type="text/javascript">
+		function openShare(){
+			var btnArray = ['取消', '确定'];
+		mui.confirm('是否开启分享？','Hi...',new Array('否','是'),function(e){
+		   if(e.index == 1){mui.toast('已成功设置');}else{mui.toast('已取消');}
+		});
+		}
+	</script> -->
+	
+	<div class="mui-content" style="margin-top: 80px;">
+		<div class="mui-content-padded">
+			
+		</div>
+		<div class="mui-content-padded">
+			<h5>7天血糖和血红蛋白值(mol/L)及睡眠评分</h5>
+			<div class="chart" id="lineChart"></div>
+		</div>
+	</div>
+	
+	<script src="js/echarts.min.js"></script>
+	<script>
+		var getOption = function(chartType) {
+			//利用三目判断根据图形的样式选取不同类型的数据，bar和line的数据格式相同，pie格式与前两者不同
+			var chartOption = chartType == 'pie' ? {
+				calculable: false,
+				series: [{
+					name: '访问来源',
+					type: 'pie',
+					radius: '70%',//管理图形大小占比的
+					center: ['50%', '50%'],//管理图形水平位置的
+					data: [{
+						value: 335,
+						name: '血糖正常'
+					}, {
+						value: 310,
+						name: '血糖偏低'
+					}, {
+						value: 234,
+						name: '血糖偏高'
+					}]
+				}]
+			} : {
+				legend: {//标题
+					data: ['糖化血红蛋白%', '血糖','睡眠指数']
+				},
+				grid: {
+					x: 30,
+					x2: 30,
+					x3:30,
+					y: 30,
+					y2: 30,
+					y3:30
+				},
+				toolbox: {//工具箱
+					show: false,
+					feature: {
+						mark: {
+							show: true
+						},
+						dataView: {
+							show: true,
+							readOnly: false
+						},
+						magicType: {
+							show: true,
+							type: ['line', 'bar']
+						},
+						restore: {
+							show: true
+						},
+						saveAsImage: {
+							show: true
+						}
+					}
+				},
+				calculable: false,
+				//横纵轴刻度
+				xAxis: [{
+					type: 'category',
+					data: ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']
+				}],
+				yAxis: [{
+					name:'mmoll/L',
+					type: 'value',
+				},
+				{
+					name: '分',
+					type:'value'
+				}],
+				//显示数据  此处数据名的名称还要与标题的名称相对应，否则无法显示
+				series: [{
+					name: '糖化血红蛋白%',
+					type: chartType,
+					itemStyle : { normal: {label : {show: true}}},
+					data: [2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 13]
+				}, {
+					name: '血糖',
+					type: chartType,
+					yAxisIndex:0,
+					data: [2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6]
+				}, {
+					name: '睡眠指数',
+					type: chartType,
+					yAxisIndex:1,
+					data: [1, 1, 2,4, 2, 70, 70]
+				}]
+			};
+			return chartOption;
+		};
+		
+		
+		var byId = function(id) {
+			return document.getElementById(id);
+		};
+		var lineChart = echarts.init(byId('lineChart'));
+		lineChart.setOption(getOption('line'));
+		var pieChart = echarts.init(byId('pieChart'));
+		pieChart.setOption(getOption('pie'));
+		byId("echarts").addEventListener('tap',function(){
+			var url = this.getAttribute('data-url');
+			plus.runtime.openURL(url);
+		},false);
+	</script>
+	
+	
+	</body>
+	<script type="text/javascript">
+		function openABH(){
+		    mui.openWindow({
+			url    : 'doctor_abnormal_head.html',
+			extras :
+			{}
+		    });
+		}
+		$("#backBtn").click(function(){
+			history.go(-1);
+		});
+	</script>
+</html>

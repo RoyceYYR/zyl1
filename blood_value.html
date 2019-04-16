@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<title></title>
+<script src="js/mui.min.js"></script>
+<link href="css/mui.min.css" rel="stylesheet"/>
+<link href="css/blood/bs_main.css" rel="stylesheet"/>
+<link rel="stylesheet" type="text/css" href="css/common.css"/>
+<script type="text/javascript" charset="utf-8">
+      	mui.init();
+		
+</script>
+    
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav">
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" href="bsSet.html" ></a>
+		<h1 class="mui-title">请输入血糖值</h1>
+	</header>
+	<br><br><br><br>
+<p onclick="connectNow();" style="margin-left: 20px; color: #007AFF;">连接设备</p>
+<br />
+
+<form class="mui-input-group">
+    <div class="mui-input-row">
+        <label>早/中/晚</label>
+    <input type="text" class="mui-input-clear" id="xtime" placeholder="请输入早/中/晚">
+    </div>
+    <div class="mui-input-row">
+        <label>餐前/后</label>
+        <input type="text" class="mui-input-clear" id="xwhen" placeholder="请输入餐前/餐后">
+    </div>
+	<div class="mui-input-row">
+	    <label>血糖值</label>
+	    <input type="text" class="mui-input-clear" id="xbs" placeholder="请输入血糖值(mol/L)">
+	</div>
+    <div class="mui-button-row">
+        <button type="button" class="mui-btn mui-btn-outlined" onclick="storebsdata();">确认</button>
+        <button type="button" class="mui-btn mui-btn-outlined" onclick="openBlood();" >取消</button>
+    </div>
+</form>
+
+<br />
+<div style="text-align:center">
+<button type="button" class="bluebutton" onclick="openBlood();">返回</button>
+</div>
+<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+<script>
+	function storebsdata(){
+            var xtime = $("#xtime").val();
+			var xwhen = $("#xwhen").val();
+            var xbs = $("#xbs").val();
+            $.ajax({
+				 url:"http://203.195.148.111:8080/index/index/store_bsdata",
+				 type: "post",
+				 data: {xtime: xtime ,xwhen: xwhen , xbs: xbs },
+				 
+				success: function(data){
+					alert("设置成功")
+				     }
+            });
+     } 
+</script>
+
+</body>
+<script type="text/javascript">
+	function connectNow(){
+		mui.alert('设备连接失败', 'Loading', function() {
+   mui.toast('请手动输入');
+});
+	}
+	function alertcon(){
+	   mui.alert('已完成设置', 'Congratulations !');
+	}
+
+	function openBlood(){
+		mui.openWindow({
+		url    : 'blood_main_head.html',
+		extras :
+		{}
+		});
+	}
+
+</script>
+</html>

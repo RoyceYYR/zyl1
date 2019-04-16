@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html >
+<head><meta charset="UTF-8">
+
+<link rel="stylesheet" href="css/reset.css">
+<link rel="stylesheet" type="text/css" href="css/log_patient_detail.css"/>
+<!-- 日期 -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
+<link rel="stylesheet" href="css/material.min.css" />
+<link href="http://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="stylesheet" type="text/css" href="css/default.css">
+		
+		<script type="text/javascript">  
+			 if(window.localStorage){  
+			 var un = localStorage.getItem("username");  
+			 var pas = localStorage.getItem("password");  
+			 //alert(un+pas);  
+			 }else{alert("浏览不支持localStorage")}  
+		</script>
+</head>
+<body>
+ <form> 
+ <h1 class="head">个人信息完善</h1>
+ <div class="controls">
+      <h1  >请选择您的年龄</h1>
+    <input id="radio-1" type="radio" name="r-group-1" checked="checked" />
+    <label for="radio-1">男</label>
+    
+    <input id="radio-2" type="radio" name="r-group-1" />
+    <label for="radio-2">女</label>
+  </div>
+ 
+	<div class="controls">
+	    <h1>请选择您的出生日期</h1>
+	  <!-- <input id="check-1" type="checkbox" name="check-1" checked="checked" />
+	  <label for="check-1">Apples</label>
+	  
+	   <input id="check-2" type="checkbox" name="check-1" />
+	  <label for="check-2">Oranges</label> -->
+	  
+	  <div class="htmleaf-container">	
+	  	<div class="container well" style="background: none;">
+	  		<div class="row">
+	  			<div class="col-md-6">
+	  				<div class="form-control-wrapper">
+	  					<input type="text" style="color: #008080;" id="date" class="form-control floating-label" placeholder="选择日期">
+	  				</div>
+	  			</div>
+	  			
+	  		</div>
+	  	</div>
+	  </div>
+	  
+	  
+	</div>
+	
+  <div class="controls">
+      <h1>请选择您的并发症</h1>
+    <input id="check-1" type="checkbox" name="check-1" checked="checked" />
+    <label for="check-1">失眠</label>
+    
+     <input id="check-2" type="checkbox" name="check-1" />
+    <label for="check-2">肾病</label>
+	
+	<input id="check-3" type="checkbox" name="check-1" />
+	<label for="check-3">高血脂</label>
+	
+	<input id="check-4" type="checkbox" name="check-1" />
+	<label for="check-4">糖尿病足</label>
+	
+	<input id="check-5" type="checkbox" name="check-1" />
+	<label for="check-5">贫血</label>
+	
+	<input id="check-6" type="checkbox" name="check-1" />
+	<label for="check-6">白内障</label>
+	
+	<input id="check-7" type="checkbox" name="check-1" />
+	<label for="check-7">冠心病</label>
+	
+	<input id="check-8" type="checkbox" name="check-1" />
+	<label for="check-8">脑血管病</label>
+	
+	<input id="check-9" type="checkbox" name="check-1" />
+	<label for="check-9">高血压</label>
+	
+	
+  </div>
+  
+  
+  
+    
+  <!-- <div class="controls">
+     <h1>Toggles</h1>
+    <input class="toggle" type="checkbox" name="check-3" checked="checked" />
+    <input class="toggle" type="checkbox" name="check-4" />
+  </div> -->
+</form>
+
+
+<script src="js/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="https://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/material.min.js"></script>
+	<script type="text/javascript" src="js/moment-with-locales.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap-material-datetimepicker.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			$('#date').bootstrapMaterialDatePicker
+			({
+				time: false
+			});
+	
+			$('#time').bootstrapMaterialDatePicker
+			({
+				date: false,
+				shortTime: true,
+				format: 'HH:mm'
+			});
+	
+			$('#date-format').bootstrapMaterialDatePicker
+			({
+				format: 'dddd DD MMMM YYYY - HH:mm'
+			});
+			$('#date-fr').bootstrapMaterialDatePicker
+			({
+				format: 'DD/MM/YYYY HH:mm',
+				lang: 'fr',
+				weekStart: 1, 
+				cancelText : 'ANNULER'
+			});
+	
+			$('#date-end').bootstrapMaterialDatePicker
+			({
+				weekStart: 0, format: 'DD/MM/YYYY HH:mm'
+			});
+			$('#date-start').bootstrapMaterialDatePicker
+			({
+				weekStart: 0, format: 'DD/MM/YYYY HH:mm'
+			}).on('change', function(e, date)
+			{
+				$('#date-end').bootstrapMaterialDatePicker('setMinDate', date);
+			});
+	
+			$('#min-date').bootstrapMaterialDatePicker({ format : 'DD/MM/YYYY HH:mm', minDate : new Date() });
+	
+			$.material.init()
+		});
+		</script>	  
+	
+
+
+</body></html>

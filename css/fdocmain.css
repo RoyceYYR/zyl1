@@ -1,0 +1,49 @@
+
+
+#tab {
+                width: auto;
+                margin: 0 auto;
+				
+                /* box-shadow: 5px 5px 5px #888888; */
+            }
+            #tab h3 {
+				border: lightskyblue 2px solid;
+                margin: 10px;
+                padding: 0px;
+                font-size: 20px;
+                float: left;
+                right: 5px;                
+                width: 150px;
+                height: 40px;
+                line-height: 40px;
+                text-align: center; 
+            }
+            #tab div {
+                clear: both;
+                height: auto;
+                font-size: 20px;
+                padding: 20px 0px 0px 20px;    
+                display: none;        
+            }
+            #tab h3.active {
+                background: lightskyblue;
+            }
+            #tab div.content {
+                display: block;
+				height: auto;
+               /* background: #FFF7F7; */
+            }
+
+.chart {
+				background: #FFF7F7;
+				height: 200px;
+				margin: 0px;
+				padding: 0px;
+			}
+			h5 {
+				margin-top: 30px;
+				font-weight: bold;
+			}
+			h5:first-child {
+				margin-top: 15px;
+			}

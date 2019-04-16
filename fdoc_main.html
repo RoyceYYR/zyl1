@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<script src="js/mui.min.js"></script>
+		<link href="css/mui.css" rel="stylesheet"/>
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+		<!-- <link rel="stylesheet" type="text/css" href="css/fdocmain.css"/> -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="css/material.min.css" />
+		<link rel="stylesheet" href="css/bootstrap-material-datetimepicker.css" />
+		<link href="http://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet" type="text/css">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/default.css">
+		
+		<script src="svg/iconfont.js" type="text/javascript" charset="utf-8"></script>
+			<style>
+				.icon {
+				width: 40px;
+				height: 40px;
+				vertical-align: -0.15em;
+				fill: currentColor;
+				overflow: hidden;
+			}
+		</style>
+				<script type="text/javascript">  
+			 if(window.localStorage){  
+			 var un = localStorage.getItem("username");  
+			 var pas = localStorage.getItem("password");  
+			 //alert(un+pas);  
+			 }else{alert("浏览不支持localStorage")}  
+		</script>
+	</head>
+	
+	<body>
+			<div class="mui-content">
+			    <div class="mui-card" style="background: #FFF7F7;">
+			        <div class="mui-card-header mui-card-media">
+			            <!--
+			                    主体内容部分：
+			                    媒体卡片自作：mui-card-media
+			                    右边文字叙述部分：mui-media-body
+			                -->
+			                <!--<div class="mui-card-media">-->
+			                    <img src="img/Dr.X.jpeg"/>
+			                    <div class="mui-media-body">
+			                    <p>Dr.X</p>
+			                        <p>2019-3-16  星期六</p>
+			                </div>
+			            </div>
+			        <div class="mui-card-content">
+			            <div class="mui-card-content-inner">
+			                <p class="mui-card-content-inner">
+							早睡早起。
+			                </p>
+			            </div>
+			        
+			        </div>
+			        <div class="mui-card-footer">
+			            <!--
+			                设置
+			            -->
+			            <a href="" class="mui-card-link">
+			                <span class="mui-content-padded mui-icon mui-icon-star "></span>
+			                收藏</a>
+			            <a href="" class="mui-card-link">
+			                <span class="mui-content-padded mui-icon mui-icon-chat"></span>回复</a>
+			            <!--<a href="" class="mui-card-link">评论</a>-->
+			        </div>
+			    </div>
+			</div>
+	
+	        <div class="mui-content">
+            <div class="mui-card" style="background: #FFF7F7;">
+                <div class="mui-card-header mui-card-media">
+                    <!--
+                            主体内容部分：
+                            媒体卡片自作：mui-card-media
+                            右边文字叙述部分：mui-media-body
+                        -->
+                        <!--<div class="mui-card-media">-->
+                            <img src="img/Dr.X.jpeg"/>
+                            <div class="mui-media-body">
+                            <p>Dr.X</p>
+                                <p>2019-3-17  星期日</p>
+                        </div>
+                    </div>
+                <div class="mui-card-content">
+                    <div class="mui-card-content-inner">
+                        <p class="mui-card-content-inner">
+						二甲双胍加服1片。
+                        </p>
+                    </div>
+                
+                </div>
+                <div class="mui-card-footer">
+                    <!--
+                        设置
+                    -->
+                    <a href="" class="mui-card-link">
+                        <span class="mui-content-padded mui-icon mui-icon-star mui-icon-star-filled"></span>
+                        收藏</a>
+                    <a href="" class="mui-card-link">
+                        <span class="mui-content-padded mui-icon mui-icon-chat"></span>回复</a>
+                    <!--<a href="" class="mui-card-link">评论</a>-->
+                </div>
+            </div>
+        </div>
+	
+	<script src="js/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="https://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/material.min.js"></script>
+	<script type="text/javascript" src="js/moment-with-locales.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap-material-datetimepicker.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			$('#date').bootstrapMaterialDatePicker
+			({
+				time: false
+			});
+	
+			$('#time').bootstrapMaterialDatePicker
+			({
+				date: false,
+				shortTime: true,
+				format: 'HH:mm'
+			});
+	
+			$('#date-format').bootstrapMaterialDatePicker
+			({
+				format: 'dddd DD MMMM YYYY - HH:mm'
+			});
+			$('#date-fr').bootstrapMaterialDatePicker
+			({
+				format: 'DD/MM/YYYY HH:mm',
+				lang: 'fr',
+				weekStart: 1, 
+				cancelText : 'ANNULER'
+			});
+	
+			$('#date-end').bootstrapMaterialDatePicker
+			({
+				weekStart: 0, format: 'DD/MM/YYYY HH:mm'
+			});
+			$('#date-start').bootstrapMaterialDatePicker
+			({
+				weekStart: 0, format: 'DD/MM/YYYY HH:mm'
+			}).on('change', function(e, date)
+			{
+				$('#date-end').bootstrapMaterialDatePicker('setMinDate', date);
+			});
+	
+			$('#min-date').bootstrapMaterialDatePicker({ format : 'DD/MM/YYYY HH:mm', minDate : new Date() });
+	
+			$.material.init()
+		});
+		</script>	  
+	</body>
+	
+	
+	
+</html>

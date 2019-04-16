@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<title></title>
+<script src="js/mui.min.js"></script>
+<link href="css/mui.min.css" rel="stylesheet"/>
+<link href="css/blood/bs_main.css" rel="stylesheet"/>
+<script type="text/javascript" charset="utf-8">
+      	mui.init();
+    </script>
+</head>
+<body>
+<div class="wrapper">
+	<a href="#"> 
+	<span class="tupian" onclick="openBsvalue();" style="background: #1EBAF0;font-size: 16px;text-align: center;">当前血糖:5mol/L</span>
+	</a> 
+	</div>
+<br />
+<div style="text-align:center">
+<button type="button" class="bluebutton" onclick="openMeals();"style="background: #FFFFFF;" >服药提醒设置</button>
+</div>
+<br />
+<div class="mui-card">
+<div class="mui-card-header mui-card-media">
+	<img src="img/Dr.X.jpeg" />
+	<div class="mui-media-body">
+		Dr.X
+		<p>发表于 2019-01-30 15:30</p>
+	</div>
+</div>
+	<div class="mui-card-content">
+		<h6>减少淀粉摄入，增加蛋白摄入</h6>
+	</div>
+</div>
+<br />
+<div style="text-align:center;">
+&nbsp;&nbsp;&nbsp;&nbsp;
+<button type="button" class="mui-btn" onclick="shareNow()" >分享</button>
+&nbsp;&nbsp;
+<!--统计是否还需要-->
+<button type="button"  class="mui-btn" onclick="openData()">统计</button>
+&nbsp;&nbsp;
+<button type="button" class="mui-btn" onclick="openSetting();">设置</button>
+</div>
+</body>
+<script type="text/javascript">
+	function openBsvalue(){
+	    mui.openWindow({
+		url    : 'blood_value.html',
+		extras :
+		{}
+	    });
+	}
+	function shareNow(){
+		var btnArray = ['取消', '确定'];
+	mui.confirm('是否现在分享？','Hi...',new Array('否','是'),function(e){
+	   if(e.index == 1){mui.toast('分享成功');}else{mui.toast('已取消');}
+	});
+	}
+	function openData(){
+	    mui.openWindow({
+		url    : 'blood_data.html',
+		extras :
+		{}
+	    });
+	}
+
+	function openMeals(){
+		mui.openWindow({
+		url    : 'blood_meals.html',
+		extras :
+		{}
+		});
+	}
+	function openSetting(){
+		mui.openWindow({
+		url    : 'blood_setting.html',
+		extras :
+		{}
+		});
+	}
+
+</script>
+</html>

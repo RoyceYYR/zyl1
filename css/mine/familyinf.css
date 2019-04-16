@@ -1,0 +1,50 @@
+.faDetail{
+	width: auto;
+	border: solid 1px gray;
+	overflow: hidden;
+	height: 105px;
+	background: white;
+}
+h1{
+	font-size: 25px;
+	line-height: 35px;
+}
+
+h2{
+	font-size: 25px;
+}
+.value{
+	float: right;
+	width: 250px;
+	height: 100px;
+	margin-right: 0px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+.value img{
+	width: 100px;
+	height: 100px;
+	display: block;
+	margin-right: 70px;
+	float: right;
+	margin-top: -8px;
+	margin-bottom: 10px;
+	text-align: center;
+}
+
+.value h2{
+	margin-top: 25px;
+	text-align: center;
+}
+
+.attri{
+	float: left;
+	width: 230px;
+	height: 80px;
+	position: absolute;
+	left: 10%;
+	margin-top: 30px;
+	}
+	

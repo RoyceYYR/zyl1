@@ -1,0 +1,63 @@
+@charset "utf-8";
+
+.alarmBtn{
+	width: 100px;
+	height:100px;
+	position: absolute;
+	top: 50px;
+	left: 50px;
+	text-align: left;
+}
+
+.word1{
+	float: right;
+}
+
+.noiseBtn{
+	width: 120px;
+	height:120px;
+	position: absolute;
+	top: 50px;
+	right: 50px;
+	text-align: left;
+}
+
+
+.sleepBtn{
+
+	
+	position: absolute;
+	top: 45%;
+	left:50%;
+	margin-left:-100px;   
+	margin-top:-90px;   
+	
+}
+
+.addAlarmBtn{
+	width: 100px;
+	height:100px;
+	position: absolute;
+	top: 410px;
+	left: 50%;
+	margin-left: -50px;
+	text-align: center;
+}
+
+.reportBtn{
+	width: 100px;
+	height:100px;
+	position: absolute;
+	top: 410px;
+	right: 50px;
+	text-align: center;
+	}
+
+.setBtn{
+	width: 100px;
+	height:100px;
+	position: absolute;
+	top: 410px;
+	left: 50px;
+	text-align: center;
+} 

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<title></title>
+<script src="js/mui.min.js"></script>
+<link href="css/mui.min.css" rel="stylesheet"/>
+<link rel="stylesheet" type="text/css" href="css/common.css"/>
+<link href="css/blood/bs_main.css" rel="stylesheet"/>
+<script type="text/javascript" charset="utf-8">
+      	mui.init();
+    </script>
+			<script type="text/javascript">  
+		 if(window.localStorage){  
+		 var un = localStorage.getItem("username");  
+		 var pas = localStorage.getItem("password");  
+		 //alert(un+pas);  
+		 }else{alert("浏览不支持localStorage")}  
+	</script>
+</head>
+<body>
+<header class="mui-bar mui-bar-nav">
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" href="bsSet.html" ></a>
+		<h1 class="mui-title">请输入血糖值</h1>
+	</header>
+	
+<ul class="mui-table-view" style="margin-top: 60px;">
+    <li class="mui-table-view-cell" onclick="openRange();">
+        <a class="mui-navigate-right" ><h6>设置血糖正常范围</h6></a>
+    </li>
+    <li class="mui-table-view-cell" onclick="openMealset();">
+        <a class="mui-navigate-right"><h6>设置餐次时间</h6></a>
+    </li>
+    <li class="mui-table-view-cell" onclick="alertTime();">
+        <a class="mui-navigate-right"><h6>设置提醒时间</h6></a>
+    </li>
+	 <li class="mui-table-view-cell" onclick="openShare();">
+	    <a class="mui-navigate-right"><h6>分享设置</h6></a>
+	</li>
+	 <li class="mui-table-view-cell" onclick="openAlert();">
+	    <a class="mui-navigate-right"><h6>报警设置</h6></a>
+	</li>
+</ul>
+<br />
+<div style="text-align:center">
+<button type="button" class="bluebutton" onclick="openBlood();">返回</button>
+</div>
+
+
+</body>
+<script type="text/javascript">
+function openBlood(){
+    mui.openWindow({
+	url    : 'blood_main_head.html',
+	extras :
+	{}
+    });
+}
+function openRange(){
+    mui.openWindow({
+	url    : 'blood_range.html',
+	extras :
+	{}
+    });
+}
+
+function openMealset(){
+    mui.openWindow({
+	url    : 'blood_meals_set.html',
+	extras :
+	{}
+    });
+}
+
+function alertTime(){
+
+mui.prompt('请输入提醒时间？','Hi...',new Array('提醒时间设置'),function(e){
+    if(e.index == 1){
+        mui.toast(e.value);
+    }else{
+        mui.toast('您取消了输入');
+    }
+});
+}
+
+function openShare(){
+	var btnArray = ['取消', '确定'];
+mui.confirm('是否开启分享？','Hi...',new Array('否','是'),function(e){
+   if(e.index == 1){mui.toast('已成功设置');}else{mui.toast('已取消');}
+});
+}
+
+function openAlert(){
+	var btnArray = ['取消', '确定'];
+mui.confirm('是否开启报警？','Hi...',new Array('否','是'),function(e){
+   if(e.index == 1){mui.toast('已成功设置');}else{mui.toast('已取消');}
+});
+}
+</script>
+</html>

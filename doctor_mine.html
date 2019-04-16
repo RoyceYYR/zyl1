@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/mui.css"/>
+	<link rel="stylesheet" type="text/css" href="css/common.css"/>
+	<link rel="stylesheet" type="text/css" href="css/mine/doctorinf.css"/>
+		<script type="text/javascript">  
+			 if(window.localStorage){  
+			 var un = localStorage.getItem("username");  
+			 var pas = localStorage.getItem("password");  
+			 //alert(un+pas);  
+			 }else{alert("浏览不支持localStorage")}  
+		</script>
+</head>
+		
+<body>
+	<!-- <header class="mui-bar mui-bar-nav">
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" href="doctor_mine_head.html" ></a>	
+		<h1 class="mui-title">我的信息</h1>
+	</header> -->
+	
+	<div id="1" class="docDetail" style="margin-top: 0px;">
+		<div id="11" class="attri">
+			<h1>头像：</h1>
+		</div>
+		<div id="12" class="value">
+			<img src="img/Dr.X.jpeg" >
+		</div>
+	</div>
+	
+	<div id="2" class="docDetail">
+		<div id="21" class="attri">
+			<h1>姓名：</h1>
+		</div>
+		<div id="22" class="value">
+			<h2>XXX</h2>
+		</div>
+	</div>
+	
+	<div id="3" class="docDetail">
+		<div id="31" class="attri">
+			<h1>工号：</h1>
+		</div>
+		<div id="32" class="value">
+			<h2>XXXXX</h2>
+		</div>
+	</div>
+	
+	<div id="4" class="docDetail">
+		<div id="41" class="attri">
+			<h1>科室：</h1>
+		</div>
+		<div id="42" class="value">
+			<h2>XX科室</h2>
+		</div>
+	</div>
+
+	<div id="5" class="docDetail">
+		<div id="51" class="attri">
+			<h1>联系方式：</h1>
+		</div>
+		<div id="52" class="value">
+			<h2>XXXXX</h2>
+		</div>
+	</div>
+	
+	
+</body>
+<script type="text/javascript">
+	function openMine(){
+	    mui.openWindow({
+		url    : 'mine_head.html',
+		extras :
+		{}
+	    });
+	}
+</script>
+</html>

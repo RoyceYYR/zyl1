@@ -1,0 +1,124 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/sleep/sleep.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/mui.css"/>
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+		<script src="svg/iconfont.js" type="text/javascript" charset="utf-8"></script>
+			<style>
+				.icon {
+				width: 35px;
+				height: 35px;
+				vertical-align: -0.15em;
+				fill: currentColor;
+				overflow: hidden;
+			}
+		</style>
+				<script type="text/javascript">  
+			 if(window.localStorage){  
+			 var un = localStorage.getItem("username");  
+			 var pas = localStorage.getItem("password");  
+			 //alert(un+pas);  
+			 }else{alert("浏览不支持localStorage")}  
+		</script>
+	</head>
+
+	<body>
+			
+		<script src="js/mui.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+		
+		
+		<div  class="alarmBtn" onclick="openAlarm()"> 
+			<svg class="icon" aria-hidden="true">
+				<use xlink:href="#icon-naozhong"></use>
+			</svg>
+			<h3 class="word1">8:00</h3>
+		</div> 
+		
+		<div  class="noiseBtn" onclick="openNoise()"> 
+			<svg class="icon" aria-hidden="true">
+				<use xlink:href="#icon-bzy"></use>
+			</svg>
+			<h3 class="word1">白噪音</h3>
+		</div> 
+		
+		<div  class="reportBtn" onclick="openReport()"> 
+			<svg class="icon" aria-hidden="true">
+				<use xlink:href="#icon-baogao"></use>
+			</svg>
+			<h4 class="word">睡眠报告</h4>
+		</div>
+		
+		<div  class="addAlarmBtn" onclick="openAlarm()"> 
+			<svg class="icon" aria-hidden="true">
+				<use xlink:href="#icon-alarm_add"></use>
+			</svg>
+			<h4 class="word">添加闹钟</h4>
+		</div>
+		
+		<div  class="setBtn" onclick="openSetting()"> 
+			<svg class="icon" aria-hidden="true">
+				<use xlink:href="#icon-shezhi"></use>
+			</svg>
+			<h4 class="word">设置</h4>
+		</div>
+		<div  class="sleepBtn" onclick="openBeginSleep();"> 
+			<svg class="icon" aria-hidden="true" style="width: 200px;height: 200px;">
+				<use xlink:href="#icon-shuimianjiance"></use>
+			</svg>
+			
+		</div>
+	</body>
+
+	<script type="text/javascript">
+	function openBeginSleep(){
+	    mui.openWindow({
+		url    : 'sleep_begin.html',
+		extras :
+		{}
+	    });
+	}
+		
+	function openNoise(){
+	    mui.openWindow({
+		url    : 'sleep_noise.html',
+		extras :
+		{}
+	    });
+	}
+		
+	function openAlarm(){
+	    mui.openWindow({
+		url    : 'sleep_add_alarm.html',
+		extras :
+		{}
+	    });
+	}
+	
+	function openSetting(){
+	    mui.openWindow({
+		url    : 'sleep_setting.html',
+		extras :
+		{}
+	    });
+	}
+	
+	function openReport(){
+	    mui.openWindow({
+		url    : 'sleep_report.html',
+		extras :
+		{}
+	    });
+	}
+	
+	
+	</script>
+
+</html>
+

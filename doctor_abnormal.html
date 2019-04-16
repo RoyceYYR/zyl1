@@ -1,0 +1,277 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+		<link href="http://cdn.bootcss.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/doctor/abnormal.css"/>
+		<script src="svg/iconfont.js" type="text/javascript" charset="utf-8"></script>
+			<style>
+				.icon {
+				width: 55px;
+				height: 55px;
+				vertical-align: -0.15em;
+				fill: currentColor;
+				overflow: hidden;
+			}
+		</style>
+				<script type="text/javascript">  
+			 if(window.localStorage){  
+			 var un = localStorage.getItem("username");  
+			 var pas = localStorage.getItem("password");  
+			 //alert(un+pas);  
+			 }else{alert("浏览不支持localStorage")}  
+		</script>
+	</head>
+
+	<body style="background: #F0F0F0;">
+		<script src="js/mui.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+		
+		
+		<a class="mui-tab-item" style="background: none;" >
+			<!-- <span class="iconfont icon-shuimian"></span> -->
+			<svg class="icon" aria-hidden="true" style="margin: 20px;width: 60px;height: 60px;">
+				<use xlink:href="#icon-bingliguanli"></use>
+			</svg>
+			<span class="mui-tab-label"><h3 style="color:#1296db;padding-left: 90px;margin-top: -70px; ">异常通知</h3></span>
+		</a>
+		
+		<div class="demo" style="padding: 1em 0;">
+		        <div class="container">
+		            <div class="row">
+		                <div class="col-md-offset-3 col-md-6">
+		                    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+		                        <div class="panel panel-default">
+		                            <div class="panel-heading" role="tab" id="headingOne">
+		                                <h4 class="panel-title">
+		                                    <a id="patient1" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+		                                        张三
+		                                    </a>
+		                                </h4>
+		                            </div>
+		                            <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+		                                <div class="panel-body">
+		                                    <p id="zb11">
+		                                         6.7 <br>
+		                                    </p>
+		                                    <p id="zb12">
+		                                    	糖化血红蛋白：6.4 <br>
+		                                    </p>
+		                                    <p id="zb13">
+		                                    	睡眠指数：70
+		                                    	
+		                                    </p>
+		                                </div>
+										<a onclick="openPat()" style="padding: 20px;"><i>点击查看病人具体信息</i></a>
+		                            </div>
+		                        </div>
+		                        <div class="panel panel-default">
+		                            <div class="panel-heading" role="tab" id="headingTwo">
+		                                <h4 class="panel-title">
+		                                    <a id="patient2" class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+		                                        李四
+		                                    </a>
+		                                </h4>
+		                            </div>
+		                            <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+		                                <div class="panel-body">
+		                                        <p id="zb21">
+		                                             6.7 <br>
+		                                        </p>
+		                                        <p id="zb22">
+		                                        	糖化血红蛋白：6.4 <br>
+		                                        </p>
+		                                        <p id="zb23">
+		                                        	睡眠指数：70
+		                                        	
+		                                        </p>
+		                                    </div>
+		                                	<a  onclick="openPat()" style="padding: 20px;"><i>点击查看病人具体信息</i></a>
+		                                
+		                            </div>
+		                        </div>
+		                        <div class="panel panel-default">
+		                            <div class="panel-heading" role="tab" id="headingThree">
+		                                <h4 class="panel-title">
+		                                    <a id="patient3" class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+		                                        王五
+		                                    </a>
+		                                </h4>
+		                            </div>
+		                            <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+		                                <div class="panel-body">
+		                                        <p id="zb31">
+		                                             6.7 <br>
+		                                        </p>
+		                                        <p id="zb32">
+		                                        	糖化血红蛋白：6.4 <br>
+		                                        </p>
+		                                        <p id="zb33">
+		                                        	睡眠指数：70
+		                                        	
+		                                        </p>
+		                                    </div>
+		                                	<a  onclick="openPat()" style="padding: 20px;"><i>点击查看病人具体信息</i></a>
+		                                
+		                            </div>
+		                        </div>
+								<div class="panel panel-default">
+								    <div class="panel-heading" role="tab" id="headingFour">
+								        <h4 class="panel-title">
+								            <a id="patient4" class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+								                王路
+								            </a>
+								        </h4>
+								    </div>
+								    <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+								        <div class="panel-body">
+								                <p id="zb41">
+								                     6.7 <br>
+								                </p>
+								                <p id="zb42">
+								                	糖化血红蛋白：6.4 <br>
+								                </p>
+								                <p id="zb43">
+								                	睡眠指数：70
+								                	
+								                </p>
+								            </div>
+								        	<a  onclick="openPat()" style="padding: 20px;"><i>点击查看病人具体信息</i></a>
+								        
+								    </div>
+								</div>
+								<div class="panel panel-default">
+								    <div class="panel-heading" role="tab" id="headingFive">
+								        <h4 class="panel-title">
+								            <a id="patient5" class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+								                王齐
+								            </a>
+								        </h4>
+								    </div>
+								    <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+								        <div class="panel-body">
+								                <p id="zb51">
+								                     6.7 <br>
+								                </p>
+								                <p id="zb52">
+								                	糖化血红蛋白：6.4 <br>
+								                </p>
+								                <p id="zb53">
+								                	睡眠指数：70
+								                	
+								                </p>
+								            </div>
+								        	<a  onclick="openPat()" style="padding: 20px;"><i>点击查看病人具体信息</i></a>
+								        
+								    </div>
+								</div>
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		<script src="http://cdn.bootcss.com/jquery/1.11.0/jquery.min.js" type="text/javascript"></script>
+		<script>window.jQuery || document.write('<script src="js/jquery-1.11.0.min.js"><\/script>')</script>
+		<script src="http://cdn.bootcss.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+		 
+		 
+		 <div class="alert"  style="text-align: center;">
+		 	<a class="mui-tab-item" style="background: none; top: 100px;" >
+		 	<!-- <span class="iconfont icon-shuimian"></span> -->
+		 	<svg class="icon" aria-hidden="true" style="margin: 20px;">
+		 		<use xlink:href="#icon-xietangyujing"></use>
+		 	</svg>
+			<button type="button" onclick="openAlert()" style="margin: 20px;left: -20px;">发送异常警告</button>
+		 	<!-- <span class="mui-tab-label"><h4 style="color:#1296db">发送异常警告</h4></span> -->
+		 </a>
+		 </div>
+		 
+	</body>
+<script type="text/javascript">
+	function openAlert(){
+		var btnArray = ['取消', '确定'];
+	mui.confirm('是否像病人及家属发送异常警告？','Hi...',new Array('否','是'),function(e){
+	   if(e.index == 1){mui.toast('已成功发送');}else{mui.toast('已取消');}
+	});
+	}
+</script>
+<script>
+	$.ajax({
+				 url:"http://203.195.148.111:8080/index/index/patient1",
+				 withCredentials:true,
+				 
+				success: function(data){
+				 var arr1 = data.split("|");
+				 $("#patient1").html(arr1[0]);
+				 $("#zb11").html("血糖指标："+arr1[1]);
+				 $("#zb12").html("糖化血红蛋白："+arr1[2]);
+				 $("#zb13").html("睡眠指数："+arr1[3]);
+				     }
+            });
+	$.ajax({
+				 url:"http://203.195.148.111:8080/index/index/patient2",
+				 withCredentials:true,
+				 
+				success: function(data){
+				 var arr1 = data.split("|");
+				 $("#patient2").html(arr1[0]);
+				 $("#zb21").html("血糖指标："+arr1[1]);
+				 $("#zb22").html("糖化血红蛋白："+arr1[2]);
+				 $("#zb23").html("睡眠指数："+arr1[3]);
+				     }
+	        });
+	$.ajax({
+				 url:"http://203.195.148.111:8080/index/index/patient3",
+				 withCredentials:true,
+				 
+				success: function(data){
+				 var arr1 = data.split("|");
+				 $("#patient3").html(arr1[0]);
+				 $("#zb31").html("血糖指标："+arr1[1]);
+				 $("#zb32").html("糖化血红蛋白："+arr1[2]);
+				 $("#zb33").html("睡眠指数："+arr1[3]);
+				     }
+	        });
+	$.ajax({
+				 url:"http://203.195.148.111:8080/index/index/patient4",
+				 withCredentials:true,
+				 
+				success: function(data){
+				  var arr1 = data.split("|");
+				 $("#patient4").html(arr1[0]);
+				 $("#zb41").html("血糖指标："+arr1[1]);
+				 $("#zb42").html("糖化血红蛋白："+arr1[2]);
+				 $("#zb43").html("睡眠指数："+arr1[3]);
+				     }
+	        });
+	$.ajax({
+				 url:"http://203.195.148.111:8080/index/index/patient5",
+				 withCredentials:true,
+				 
+				success: function(data){
+				 var arr1 = data.split("|");
+				$("#patient5").html(arr1[0]);
+				$("#zb51").html("血糖指标："+arr1[1]);
+				$("#zb52").html("糖化血红蛋白："+arr1[2]);
+				$("#zb53").html("睡眠指数："+arr1[3]);
+				     }
+	        });
+</script>
+<script type="text/javascript">
+	function openPat(){
+	    mui.openWindow({
+		url    : 'doctor_patient_detail.html',
+		extras :
+		{}
+	    });
+	}
+	
+</script>
+</html>

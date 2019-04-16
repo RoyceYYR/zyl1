@@ -1,0 +1,132 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/sleep/addalarm.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/mui.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/sleep/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/htmleaf-demo.css">
+		<link rel="stylesheet" type="text/css" href="css/sleep/setting.css"/>
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+			<script type="text/javascript">  
+		 if(window.localStorage){  
+		 var un = localStorage.getItem("username");  
+		 var pas = localStorage.getItem("password");  
+		 //alert(un+pas);  
+		 }else{alert("浏览不支持localStorage")}  
+	</script>	
+	</head>
+
+	<body>
+		<script src="js/mui.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+		
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" href="index.html" onclick="openSleep()"></a>	
+			<h1 class="mui-title">编辑闹钟</h1>
+		</header>
+		
+		<div class="htmleaf-container">
+			<div class="main"><br><br>
+				<center>
+					<h1>请选择闹钟时间：</h1>
+				<input class="time" type="text" value="14:30" onchange="console.log('Time changed')" />
+			
+				</center>
+				</div>
+		</div>
+		<script src="http://cdn.bootcss.com/jquery/1.11.0/jquery.min.js" type="text/javascript"></script>
+		<script>window.jQuery || document.write('<script src="js/jquery-1.11.0.min.js"><\/script>')</script>
+		<script type="text/javascript" src="js/jquery-clock-timepicker.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$('.time').clockTimePicker({});
+			});
+		</script>
+		
+		<div id="1" class="mui-input-group">
+				<div class="mui-input-row">
+				<label>重复</label>
+				<a class="mui-navigate-right">
+				<span class="mui-badge1">
+				<select class="mui-h5" style="margin:auto; color:#000;">				
+					<option value="1">只响一次</option>
+					<option value="1">周一到周五</option>
+					<option value="1">法定工作日</option>
+					<option value="1">每天</option>
+					<option value ="1">自定义</option>
+				</select>
+				</span> 
+				</a>
+			</div>
+		</div>
+		
+		<div id="2" class="mui-input-group">
+				<div class="mui-input-row">
+				<label>闹醒区间</label>
+				<a class="mui-navigate-right">
+				<span class="mui-badge1">
+				<select class="mui-h5" style="margin:auto; color:#000;">
+					<option value="">无</option>
+					<option value="1">前后5分钟</option>
+					<option value="1">前后10分钟</option>
+					<option value="1">前后15分钟</option>
+					<option value="1">前后20分钟</option>
+				</select>
+				</span> 
+				</a>
+			</div>
+		</div>
+		
+		<div id="3" class="mui-input-group">
+				<div class="mui-input-row">
+				<label>闹钟铃声</label>
+				<a class="mui-navigate-right">
+				<span class="mui-badge1">
+				<select class="mui-h5" style="margin:auto; color:#000;">
+					<option value="">跟随系统</option>
+					<option value="1">闹钟1</option>
+					<option value="1">闹钟2</option>
+					<option value="1">闹钟3</option>
+					<option value="1">闹钟4</option>
+				</select>
+				</span> 
+				</a>
+			</div>
+		</div>
+		
+		<div id="4" class="mui-input-group">
+				<div class="mui-input-row">
+				<label>是否震动</label>
+				<a class="mui-navigate-right">
+				<span class="mui-badge1">
+				<select class="mui-h5" style="margin:auto; color:#000;">
+					<option value="1">是</option>
+					<option value="1">否</option>
+				</select>
+				</span> 
+				</a>
+			</div>
+		</div>
+		
+		<form action="index.html" method="get" id="subalarm" style="text-align: center; margin-top: 80px;">
+			<input type="submit" value="确定">
+		</form>
+		
+		
+	</body>
+<script type="text/javascript">
+	function openSleep(){
+	    mui.openWindow({
+		url    : 'index.html',
+		extras :
+		{}
+	    });
+	}
+</script>
+</html>
