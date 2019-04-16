@@ -1,0 +1,30 @@
+.noiseBtn{
+	border-color: #13D1BE;
+	width:130px;
+	height: 80px;
+	color: #000000;
+	position: absolute;
+	top: 100px;
+	right: 40px;
+	border-radius: 50%;
+	/* background: lightcyan; */
+}
+
+.word1 {
+	float: right;
+	top: 100px;
+}
+
+
+
+.container-fluid{
+	margin-top: 240px;
+}
+
+.returnreport{
+	width: 100px;
+	top:60px;
+	left: 50%;
+	margin-left: -50px;
+}
+

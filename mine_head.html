@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title></title>
+    <script src="js/mui.min.js"></script>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+    <script type="text/javascript" charset="utf-8">
+      	mui.init();
+    </script>
+	<link rel="stylesheet" type="text/css" href="css/common.css"/>
+	<script src="svg/iconfont.js" type="text/javascript" charset="utf-8"></script>
+	
+		<style>
+			.icon {
+			width: 35px;
+			height: 35px;
+			vertical-align: -0.15em;
+			fill: currentColor;
+			overflow: hidden;
+		}
+	</style>
+		<script type="text/javascript">  
+			 if(window.localStorage){  
+			 var un = localStorage.getItem("username");  
+			 var pas = localStorage.getItem("password");  
+			 //alert(un+pas);  
+			 }else{alert("浏览不支持localStorage")}  
+		</script>
+</head>
+
+<body>
+	
+	<header class="mui-bar mui-bar-nav">
+            <h1 class="mui-title">糖医</h1>
+        </header>
+	<nav class="mui-bar mui-bar-tab iconfont" >
+		<a class="mui-tab-item" onclick="openID()">
+		
+			<svg class="icon" aria-hidden="true">
+				<use xlink:href="#icon-zhuye"></use>
+			</svg>
+			<span class="mui-tab-label"><h4>主页</h4></span>
+		</a>
+		
+		<a class="mui-tab-item" href="index.html" onclick="openSleep()">
+			<!-- <span class="iconfont icon-shuimian"></span> -->
+			<svg class="icon" aria-hidden="true">
+				<use xlink:href="#icon-shuimian"></use>
+			</svg>
+			<span class="mui-tab-label"><h4>睡眠</h4></span>
+		</a>
+		
+		<a class="mui-tab-item" href="blood_main_head.html"  onclick="openBlood()">
+			<!-- <span class="iconfont icon-iconxt"></span> -->
+			<svg class="icon" aria-hidden="true">
+				<use xlink:href="#icon-iconxt"></use>
+			</svg>
+			<span class="mui-tab-label" ><h4 >血糖</h4></span>
+		</a>
+		
+		<a class="mui-tab-item" href="mine_head.html" > 
+			
+			<svg class="icon" aria-hidden="true">
+				<use xlink:href="#icon-wodeact"></use>
+			</svg>
+			<span class="mui-tab-label" ><h4 style="color:#1296db">我的</h4></span>
+		</a>
+	</nav>
+<script type="text/javascript">
+mui.init({
+     subpages:[{
+         url   :'mine.html',
+         id    : 'mine.html',
+         styles:{
+            top    : '60px',//子页面顶部位置
+            bottom : '85px',//子页面底部位置
+            width  : '100%',
+            // height : '90%'
+          },
+     }]
+});
+
+function openBlood(){
+    mui.openWindow({
+	url    : 'blood_main_head.html',
+	extras :
+	{}
+    });
+}
+
+function openSleep(){
+    mui.openWindow({
+	url    : 'sleep_head.html',
+	extras :
+	{}
+    });
+}
+
+function openID(){
+    mui.openWindow({
+	url    : 'index.html',
+	extras :
+	{}
+    });
+}
+
+</script>
+</body>
+</html>

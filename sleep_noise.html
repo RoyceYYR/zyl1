@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="css/sleep/whitenoise.css"/>
+			<script type="text/javascript">  
+		 if(window.localStorage){  
+		 var un = localStorage.getItem("username");  
+		 var pas = localStorage.getItem("password");  
+		 //alert(un+pas);  
+		 }else{alert("浏览不支持localStorage")}  
+	</script>
+	</head>
+
+	<body>
+		<script src="js/mui.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+		
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" href="index.html" onclick="openSleep()"></a>
+			<h1 class="mui-title">白噪音选择</h1>
+		</header>
+		
+		<div id="noisechiose">
+			<form  action="sleep.html" method="get" style="margin-top: 80px;">
+				<center>
+					<label for="n1"><input id="n1" type="radio" value="1" name="nchose">点击试试1</label><br/>
+					<label for="n2"><input id="n2" type="radio" value="2" name="nchose">点击试试2</label><br/>
+					<label for="n3"><input id="n3" type="radio" value="3" name="nchose">点击试试3</label><br/>
+					<label for="n4"><input id="n4" type="radio" value="4" name="nchose">点击试试4</label><br/>
+					<label for="n5"><input id="n5" type="radio" value="5" name="nchose">点击试试5</label><br/>
+					<label for="n6"><input id="n6" type="radio" value="6" name="nchose">点击试试6</label><br/>
+					<label for="n7"><input id="n7" type="radio" value="7" name="nchose">点击试试7</label>			
+				</center>
+			</form>
+		</div>
+		
+		<button type="button" class="ncBtn selfmotion">自动播放</button>
+		<button type="button" class="ncBtn motion">播放</button>
+		<button type="button" class="ncBtn close">定时关闭</button>
+		
+	</body>
+
+<script type="text/javascript">
+	function openSleep(){
+	    mui.openWindow({
+		url    : 'index.html',
+		extras :
+		{}
+	    });
+	}
+</script>
+
+</html>

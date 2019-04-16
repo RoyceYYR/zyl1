@@ -1,0 +1,26 @@
+.ncBtn{
+	position: absolute;
+	margin: 40px;
+	border-radius: 50%;
+}
+
+.selfmotion{
+	width: 80px;
+	height: 80px;
+	left: 10px;
+	margin-top: 60px;
+}
+
+.motion{
+	width: 120px;
+	height: 120px;
+	left: 50%;
+	margin-left: -60px;
+}
+
+.close{
+	width: 80px;
+	height: 80px;
+	right: 10px;
+	margin-top: 60px;
+}

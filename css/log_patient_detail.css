@@ -1,0 +1,488 @@
+/* 选择框 */
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700);
+
+body {
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 300;
+	background: url(../img/bg.jpg);
+	color: #fff;
+	padding-top: 20px;
+}
+
+form {
+	width: 80%;
+	margin: 0 auto;
+}
+
+.head {
+	margin-top: 100px;
+	font-size: 45px;
+	line-height: 3;
+	text-align: center;
+	font-weight: 700;
+	line-height: 1;
+	margin-bottom: 30px;
+	background: -webkit-repeating-linear-gradient(-45deg,
+		rgb(18, 83, 93),
+		rgb(18, 83, 93) 20px,
+		rgb(64, 111, 118) 20px,
+		rgb(64, 111, 118) 40px,
+		rgb(18, 83, 93) 40px);
+	-webkit-text-fill-color: transparent;
+	-webkit-background-clip: text;
+}
+
+
+div.controls {
+	margin-bottom: 12px;
+	border: 1px dotted #fafafa;
+	padding: 25px 20px;
+	position: relative;
+	margin-bottom: 20px;
+}
+
+div.controls h1 {
+	margin-top: 10px;
+	font-size: 30px;
+	font-weight: 400;
+	line-height: 1;
+	text-transform: uppercase;
+	display: inline-block;
+	position: absolute;
+	left: 10px;
+	top: -10px;
+	padding: 0 10px;
+	color: rgb(6, 106, 117)
+}
+
+input[type='radio'],
+input[type='checkbox'] {
+	display: none;
+	cursor: pointer;
+}
+
+input[type='radio']:focus,
+input[type='radio']:active,
+input[type='checkbox']:focus,
+input[type='checkbox']:active {
+	outline: none;
+}
+
+input[type='radio']+label,
+input[type='checkbox']+label {
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+	padding-left: 25px;
+	margin-right: 10px;
+	margin-top: 20px;
+	color: #0b4c6a;
+}
+
+input[type='radio']+label:before,
+input[type='radio']+label:after,
+input[type='checkbox']+label:before,
+input[type='checkbox']+label:after {
+	content: '';
+	font-family: helvetica;
+	display: inline-block;
+	width: 18px;
+	height: 18px;
+	left: 0;
+	bottom: 0;
+	text-align: center;
+	position: absolute;
+}
+
+input[type='radio']+label:before,
+input[type='checkbox']+label:before {
+	background-color: #fafafa;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	-webkit-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+
+input[type='radio']+label:after,
+input[type='checkbox']+label:after {
+	color: #fff;
+}
+
+input[type='radio']:checked+label:before,
+input[type='checkbox']:checked+label:before {
+	-moz-box-shadow: inset 0 0 0 10px #158EC6;
+	-webkit-box-shadow: inset 0 0 0 10px #158EC6;
+	box-shadow: inset 0 0 0 10px #158EC6;
+}
+
+/*Radio Specific styles*/
+input[type='radio']+label:before {
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+}
+
+input[type='radio']+label:hover:after,
+input[type='radio']:checked+label:after {
+	content: '\2022';
+	position: absolute;
+	top: 0px;
+	font-size: 19px;
+	line-height: 15px;
+}
+
+input[type='radio']+label:hover:after {
+	color: #c7c7c7;
+}
+
+input[type='radio']:checked+label:after,
+input[type='radio']:checked+label:hover:after {
+	color: #fff;
+}
+
+/*Checkbox Specific styles*/
+input[type='checkbox']+label:before {
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
+input[type='checkbox']+label:hover:after,
+input[type='checkbox']:checked+label:after {
+	content: "\2713";
+	line-height: 18px;
+	font-size: 14px;
+}
+
+input[type='checkbox']+label:hover:after {
+	color: #c7c7c7;
+}
+
+input[type='checkbox']:checked+label:after,
+input[type='checkbox']:checked+label:hover:after {
+	color: #fff;
+}
+
+/*Toggle Specific styles*/
+input[type='checkbox'].toggle {
+	display: inline-block;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	width: 55px;
+	height: 28px;
+	background-color: #fafafa;
+	position: relative;
+	-moz-border-radius: 30px;
+	-webkit-border-radius: 30px;
+	border-radius: 30px;
+	@inlcude box-shadow(none);
+	-moz-transition: all 0.2s ease-in-out;
+	-o-transition: all 0.2s ease-in-out;
+	-webkit-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+}
+
+input[type='checkbox'].toggle:hover:after {
+	background-color: #c7c7c7;
+}
+
+input[type='checkbox'].toggle:after {
+	content: '';
+	display: inline-block;
+	position: absolute;
+	width: 24px;
+	height: 24px;
+	background-color: #adadad;
+	top: 2px;
+	left: 2px;
+	-moz-border-radius: 50%;
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+	-moz-transition: all 0.2s ease-in-out;
+	-o-transition: all 0.2s ease-in-out;
+	-webkit-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+}
+
+input[type='checkbox']:checked.toggle {
+	-moz-box-shadow: inset 0 0 0 15px #158EC6;
+	-webkit-box-shadow: inset 0 0 0 15px #158EC6;
+	box-shadow: inset 0 0 0 15px #158EC6;
+}
+
+input[type='checkbox']:checked.toggle:after {
+	left: 29px;
+	background-color: #fff;
+}
+
+/* 日期 */
+.dtp {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(0, 0, 0, 0.4);
+	z-index: 2000;
+}
+
+.dtp>.dtp-content {
+	background: #fff;
+	max-width: 300px;
+	box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+	max-height: 500px;
+	position: relative;
+	left: 50%;
+}
+
+.dtp>.dtp-content>.dtp-date-view>header.dtp-header {
+	background: rgb(18, 83, 93);
+	color: #fff;
+	text-align: center;
+	padding: 0.3rem;
+}
+
+.dtp div.dtp-date,
+.dtp div.dtp-time {
+	background: rgb(6, 106, 117);
+	text-align: center;
+	color: #fff;
+	padding: 10px;
+}
+
+.dtp div.dtp-date>div {
+	padding: 0;
+	margin: 0;
+}
+
+.dtp div.dtp-actual-month {
+	font-size: 1.5em;
+}
+
+.dtp div.dtp-actual-num {
+	font-size: 3em;
+	line-height: 0.9;
+}
+
+.dtp div.dtp-actual-maxtime {
+	font-size: 3em;
+	line-height: 0.9;
+}
+
+.dtp div.dtp-actual-year {
+	font-size: 1.5em;
+	color: #DCEDC8;
+}
+
+.dtp div.dtp-picker {
+	padding: 1rem;
+	text-align: center;
+}
+
+.dtp div.dtp-picker-month,
+.dtp div.dtp-actual-time {
+	font-weight: 500;
+	text-align: center;
+}
+
+.dtp .dtp-close {
+	position: absolute;
+	top: 0.5em;
+	right: 1rem;
+}
+
+.dtp .dtp-close>a {
+	color: #fff;
+}
+
+.dtp .dtp-close>a>i {
+	font-size: 1em;
+}
+
+.dtp table.dtp-picker-days {
+	margin: 0;
+}
+
+.dtp table.dtp-picker-days,
+.dtp table.dtp-picker-days tr,
+.dtp table.dtp-picker-days tr>td {
+	border: none;
+}
+
+.dtp table.dtp-picker-days tr>td {
+	font-weight: 700;
+	font-size: 1.2rem;
+	text-align: center;
+	padding: 1rem 0.3rem;
+}
+
+.dtp table.dtp-picker-days tr>td>span.dtp-select-day {
+	color: #BDBDBD !important;
+}
+
+.dtp table.dtp-picker-days tr>td>a,
+.dtp .dtp-picker-time>a {
+	color: #212121;
+	text-decoration: none;
+	padding: 0.4rem 0.5rem 0.5rem 0.6rem;
+	border-radius: 50% !important;
+}
+
+.dtp table.dtp-picker-days tr>td>a.selected {
+	background: #8BC34A;
+	color: #fff;
+}
+
+.dtp table.dtp-picker-days tr>th {
+	color: #757575;
+	text-align: center;
+	font-weight: 700;
+	padding: 0.4rem 0.3rem;
+}
+
+.dtp .p10>a {
+	color: #689F38;
+	text-decoration: none;
+}
+
+.dtp .p10 {
+	width: 10%;
+	display: inline-block;
+}
+
+.dtp .p20 {
+	width: 20%;
+	display: inline-block;
+}
+
+.dtp .p60 {
+	width: 60%;
+	display: inline-block;
+}
+
+.dtp .p80 {
+	width: 80%;
+	display: inline-block;
+}
+
+.dtp a.dtp-meridien-am,
+.dtp a.dtp-meridien-pm {
+	position: relative;
+	top: 10px;
+	color: #212121;
+	font-weight: 500;
+	padding: 0.7rem 0.5rem;
+	border-radius: 50% !important;
+	text-decoration: none;
+	background: #eee;
+	font-size: 1rem;
+}
+
+.dtp .dtp-actual-meridien a.selected {
+	background: #689F38;
+	color: #fff;
+}
+
+.dtp .dtp-picker-time>a {
+	display: block;
+	line-height: 23px;
+	padding: 0.3rem 0.3rem 0.3rem 0.3rem;
+}
+
+.dtp .dtp-picker-time {
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	font-size: 1em;
+	border-radius: 50%;
+	cursor: pointer;
+	font-weight: 500;
+	text-align: center !important;
+}
+
+.dtp .dtp-picker-time>a.dtp-select-hour.selected {
+	background: #689F38;
+	color: #fff;
+}
+
+.dtp .dtp-picker-time>a.dtp-select-hour.disabled,
+.dtp .dtp-picker-time>a.dtp-select-minute.disabled {
+	color: #757575;
+}
+
+.dtp .dtp-picker-time>a.dtp-select-minute.selected {
+	background: #8BC34A;
+	color: #fff;
+}
+
+.dtp div.dtp-picker-clock {
+	margin: 1rem 2rem 0 2rem;
+	padding: 1rem;
+	border-radius: 50% !important;
+	background: #eee;
+}
+
+.dtp-clock-center {
+	width: 15px;
+	height: 15px;
+	background: #757575;
+	border-radius: 50%;
+	position: absolute;
+	z-index: 50;
+}
+
+.dtp .dtp-hand,
+.dtp .dtp-hour-hand {
+	position: absolute;
+	width: 4px;
+	margin-left: -2px;
+	background: #BDBDBD;
+	-moz-transform: rotate(0deg);
+	-ms-transform: rotate(0deg);
+	-webkit-transform: rotate(0deg);
+	transform: rotate(0deg);
+	-moz-transform-origin: bottom;
+	-ms-transform-origin: bottom;
+	-webkit-transform-origin: bottom;
+	transform-origin: bottom;
+	z-index: 1;
+}
+
+.dtp .dtp-minute-hand {
+	width: 2px;
+	margin-left: -1px;
+}
+
+.dtp .dtp-hand.on {
+	background: #8BC34A;
+}
+
+.dtp .dtp-buttons {
+	padding: 0 1rem 1rem 1rem;
+	text-align: right;
+}
+
+.dtp .hidden {
+	display: none;
+}
+
+.dtp .invisible {
+	visibility: hidden;
+}
+
+.dtp .left {
+	float: left;
+}
+
+.dtp .right {
+	float: right;
+}
+
+.dtp .clearfix {
+	clear: both;
+}
+
+.dtp .center {
+	text-align: center;
+}

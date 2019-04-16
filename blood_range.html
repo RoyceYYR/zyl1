@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<title></title>
+<script src="js/mui.min.js"></script>
+<link href="css/mui.min.css" rel="stylesheet"/>
+<link href="css/blood/bs_main.css" rel="stylesheet"/>
+<link rel="stylesheet" type="text/css" href="css/common.css"/>
+<script type="text/javascript" charset="utf-8">
+      	mui.init();
+    </script>
+</head>
+<script>
+	if(window.localStorage){  
+	var un = localStorage.getItem("username");  
+	var pas = localStorage.getItem("password");  
+	//alert(un+pas);  
+	}else{alert("浏览不支持localStorage")} 
+</script>
+<body>
+	<header class="mui-bar mui-bar-nav">
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" href="blood_setups.html" onclick="openSetups()" ></a>
+		<h1 class="mui-title">请输入血糖范围</h1>
+	</header>
+<form class="mui-input-group" style="margin-top: 60px;">
+    <div class="mui-input-row">
+        <label>最低</label>
+    <input type="text" class="mui-input-clear" id="low" placeholder="请输入血糖最低值">
+    </div>
+    <div class="mui-input-row">
+        <label>最高</label>
+        <input type="text" class="mui-input-clear" id="high" placeholder="请输入血糖最高值">
+    </div>
+    <div class="mui-button-row">
+        <button type="button" class="mui-btn mui-btn-outlined" onclick="storerangedata();">确认</button>
+        <button type="button" class="mui-btn mui-btn-outlined" onclick="openSetting();" >取消</button>
+    </div>
+</form>
+
+<br />
+<div style="text-align:center">
+<button type="button" class="bluebutton" onclick="openSetting();">返回</button>
+</div>
+<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+<script>
+	function storerangedata(){
+             var low = $("#low").val();
+			 var high = $("#high").val();
+            $.ajax({
+				 url:"http://203.195.148.111:8080/index/index/store_rgdata",
+				 withCredentials:true,
+				 data: {low: low ,high: high,username:un},
+				 
+				success: function(data){
+					alert("设置成功")
+				     }
+            });
+     } 
+</script>
+
+</body>
+<script type="text/javascript">
+function openSetting(){
+    mui.openWindow({
+	url    : 'blood_setting.html',
+	extras :
+	{}
+    });
+}
+function alertcon(){
+   mui.alert('已完成设置', 'Congratulations !');
+}
+</script>
+</html>

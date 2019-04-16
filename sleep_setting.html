@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/sleep/setting.css"/>
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+			<script type="text/javascript">  
+		 if(window.localStorage){  
+		 var un = localStorage.getItem("username");  
+		 var pas = localStorage.getItem("password");  
+		 //alert(un+pas);  
+		 }else{alert("浏览不支持localStorage")}  
+	</script>
+	</head>
+
+	<body>
+		<script src="js/mui.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+		
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" href="index.html" onclick="openSleep()"></a>
+			<h1 class="mui-title">编辑闹钟</h1>
+		</header>
+		
+		
+		<div id="1" class="mui-input-group">
+			<div class="mui-input-row">
+			<label>默认铃声</label>
+			<a class="mui-navigate-right">
+			<span class="mui-badge1">
+			<select class="mui-h5" style="margin:auto; color:#000;">
+				<option value="">无</option>
+				<option value="1">饿</option>
+				<option value="1">风</option>
+				<option value="1">京</option>
+				<option value="1">津</option>
+			</select>
+			</span> 
+			</a>
+		</div>
+	</div>
+	
+	<div id="2" class="mui-input-group">
+			<div class="mui-input-row">
+			<label>闹钟音量</label>
+			<a class="mui-navigate-right">
+			<span class="mui-badge1">
+			<select class="mui-h5" style="margin:auto; color:#000;">
+				<option value="">静音</option>
+				<option value="1">1</option>
+				<option value="1">2</option>
+				<option value="1">3</option>
+				<option value="1">4</option>
+			</select>
+			</span> 
+			</a>
+		</div>
+	</div>
+	
+	<div id="3" class="mui-input-group">
+			<div class="mui-input-row">
+			<label>闹醒区间</label>
+			<a class="mui-navigate-right">
+			<span class="mui-badge1">
+			<select class="mui-h5" style="margin:auto; color:#000;">
+				<option value="">无</option>
+				<option value="1">前后5分钟</option>
+				<option value="1">前后10分钟</option>
+				<option value="1">前后15分钟</option>
+				<option value="1">前后20分钟</option>
+			</select>
+			</span> 
+			</a>
+		</div>
+	</div>
+		
+		
+	<div id="4" class="mui-input-group">
+			<div class="mui-input-row">
+			<label>是否震动</label>
+			<a class="mui-navigate-right">
+			<span class="mui-badge1">
+			<select class="mui-h5" style="margin:auto; color:#000;">
+				<option value="1">是</option>
+				<option value="1">否</option>
+			</select>
+			</span> 
+			</a>
+		</div>
+	</div>
+	
+	<div id="5" class="mui-input-group">
+			<div class="mui-input-row">
+			<label>分享设置</label>
+			<a class="mui-navigate-right">
+			<span class="mui-badge1">
+			<select class="mui-h5" style="margin:auto; color:#000;">
+				<option value="1">自动分享</option>
+				<option value="1">手动分享</option>
+			</select>
+			</span> 
+			</a>
+		</div>
+	</div>
+	
+	<div id="6" class="mui-input-group">
+			<div class="mui-input-row">
+			<label>报警设置</label>
+			<a class="mui-navigate-right">
+			<span class="mui-badge1">
+			<select class="mui-h5" style="margin:auto; color:#000;">
+				<option value="1">低于60分自动报警</option>
+				<option value="1">低于80分自动报警</option>
+			</select>
+			</span> 
+			</a>
+		</div>
+	</div>
+	
+	<form action="index.html" method="get" id="subalarm" style="text-align: center; margin-top: 80px;">
+		<input type="submit" value="确定">
+	</form>
+		
+	</body>
+<script type="text/javascript">
+	function openSleep(){
+	    mui.openWindow({
+		url    : 'index.html',
+		extras :
+		{}
+	    });
+	}
+</script>
+</html>

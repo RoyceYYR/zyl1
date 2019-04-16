@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/sleep/historyreport.css"/>
+		<link rel="stylesheet" type="text/css" href="css/sleep/stylesearch.css"/>
+		<link rel="stylesheet" type="text/css" href="css/sleep/normalize.css"/>
+		<link rel="stylesheet" type="text/css" href="css/htmleaf-demo.css"/>
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		<script type="text/javascript">
+				if(window.localStorage){
+						 	var un = localStorage.getItem("username");
+							var pas = localStorage.getItem("password");
+							//alert(un+pas);
+						}else{alert("浏览不支持localStorage")};
+		</script>
+				<script type="text/javascript">  
+			 if(window.localStorage){  
+			 var un = localStorage.getItem("username");  
+			 var pas = localStorage.getItem("password");  
+			 //alert(un+pas);  
+			 }else{alert("浏览不支持localStorage")}  
+		</script>
+	</head>
+
+	<body>
+		<script src="js/mui.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+		
+		<header class="mui-bar mui-bar-nav">
+			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"  onclick="openReport()"></a>
+			<h1 class="mui-title">历史睡眠报告</h1>
+		</header>
+		<br>
+		
+		<div class="htmleaf-container">
+			<div class="search d7">
+			<form>
+			  <input type="text" placeholder="输入您要查找的时间">
+			  <button type="submit"></button>
+			</form>
+			</div>
+		</div>
+		
+		<div id="week" style="margin-left: 30px;">
+			<h1>一周内：</h1>
+			<a href="sleep_report_box.html" class="reportlink">查看周报告&#62;&#62;&#62;</a>
+		</div>
+		
+		<div id="month" style="margin-left: 30px;">
+			<h1>一月内：</h1>
+			<a href="sleep_report_box.html" class="reportlink">查看月报告&#62;&#62;&#62;</a>
+		</div>
+		
+		<div id="whole" style="margin-left: 30px;">
+			<h1>全部：</h1>
+			<a href="sleep_report_box.html" class="reportlink">查看全部报告&#62;&#62;&#62;</a>
+		</div>
+		
+		
+	</body>
+<script type="text/javascript">
+	function openReport(){
+	    mui.openWindow({
+		url    : 'sleep_report.html',
+		extras :
+		{}
+	    });
+	}
+</script>
+</html>

@@ -1,0 +1,98 @@
+.main_nav{
+	margin-top: -60px;
+	width: auto;
+	height: 105px;
+	background: #FFF7F7;
+}
+
+.word{
+	float: right;
+	color: #204D74;
+	margin-top: -90px;
+	margin-left: 20px;
+}
+
+.score{
+	margin-top: 20px;
+	width: auto;
+	height: 40px;
+	text-align: center;
+	color: royalblue;
+}
+
+.score h1{
+	font-size: 90px;
+}
+
+.score h4{
+	font-size: 40px;
+	margin-top: -70px;
+	margin-left: 120px;
+}
+
+.blood{
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	left: 50px;
+	top: 100px;
+}
+
+.sleep{
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	right: 50px;
+	top: 100px;
+}
+
+
+
+
+#tab {
+                width: auto;
+                margin: 0 auto;
+				background: #FFF7F7;
+                /* box-shadow: 5px 5px 5px #888888; */
+            }
+            #tab h3 {
+				border: lightskyblue 2px solid;
+                margin: 10px;
+                padding: 0px;
+                font-size: 20px;
+                float: left;
+                right: 5px;                
+                width: 150px;
+                height: 40px;
+                line-height: 40px;
+                text-align: center; 
+            }
+            #tab div {
+                clear: both;
+                height: auto;
+                font-size: 20px;
+                padding: 20px 0px 0px 20px;    
+                display: none;        
+            }
+            #tab h3.active {
+                background: lightskyblue;
+            }
+            #tab div.content {
+                display: block;
+				height: auto;
+               /* background: #FFF7F7; */
+            }
+
+.chart {
+				background: #FFF7F7;
+				height: 200px;
+				margin: 0px;
+				padding: 0px;
+			}
+			h5 {
+				margin-top: 30px;
+				font-weight: bold;
+			}
+			h5:first-child {
+				margin-top: 15px;
+			}

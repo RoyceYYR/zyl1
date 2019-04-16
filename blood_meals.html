@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<title></title>
+<script src="js/mui.min.js"></script>
+
+<link href="css/mui.min.css" rel="stylesheet"/>
+<link href="css/blood/bs_main.css" rel="stylesheet"/>
+<script type="text/javascript" charset="utf-8">
+      	mui.init();
+    </script>
+			<script type="text/javascript">  
+		 if(window.localStorage){  
+		 var un = localStorage.getItem("username");  
+		 var pas = localStorage.getItem("password");  
+		 //alert(un+pas);  
+		 }else{alert("浏览不支持localStorage")}  
+	</script>
+	<link rel="stylesheet" type="text/css" href="css/common.css"/>
+</head>
+<body>
+	<header class="mui-bar mui-bar-nav">
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" href="blood_main_head.html" onclick="openBS()"></a>
+		<h1 class="mui-title">输入服药对应餐次时间</h1>
+	</header>
+<form class="mui-input-group" style="margin-top: 60px;">
+    <div class="mui-input-row">
+        <label>早餐</label>
+    <input type="text" class="mui-input-clear" placeholder="请输入早餐时间">
+    </div>
+    <div class="mui-input-row">
+        <label>午餐</label>
+        <input type="text" class="mui-input-clear" placeholder="请输入午餐时间">
+    </div>
+	<div class="mui-input-row">
+	    <label>加餐</label>
+	<input type="text" class="mui-input-clear" placeholder="请输入加餐时间">
+	</div>
+	<div class="mui-input-row">
+	    <label>晚餐</label>
+	    <input type="text" class="mui-input-clear" placeholder="请输入晚餐时间">
+	</div>
+    <div class="mui-button-row">
+        <button type="button" class="mui-btn mui-btn-outlined" onclick="alertcon();">确认</button>
+        <button type="button" class="mui-btn mui-btn-outlined" onclick="openBS();" >取消</button>
+    </div>
+</form>
+
+<br />
+<div style="text-align:center">
+<button type="button" class="bluebutton" onclick="openBS();">返回</button>
+</div>
+
+
+</body>
+<script type="text/javascript">
+function openSetups(){
+    mui.openWindow({
+	url    : 'blood_etups.html',
+	extras :
+	{}
+    });
+}
+function openBS(){
+    mui.openWindow({
+	url    : 'blood_main_head.html',
+	extras :
+	{}
+    });
+}
+function alertcon(){
+   mui.alert('已完成设置', 'Congratulations !');
+}
+</script>
+</html>

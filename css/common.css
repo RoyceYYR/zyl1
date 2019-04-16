@@ -1,0 +1,23 @@
+.mui-bar-nav {
+	background: lightskyblue;
+	height: 60px;
+}
+
+.mui-pull-left {
+	color: #FFFFFF;
+	margin-top: 10px;
+}
+
+.mui-title {
+	font-size: x-large;
+	font-family:verdana;
+	top: 10px;
+}
+
+.mui-tab-item{
+	background: #FFFFFF;
+	padding: 10px;
+	font-size: 20px;
+}
+
+

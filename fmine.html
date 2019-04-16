@@ -1,0 +1,109 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.css" rel="stylesheet" />
+		<link rel="stylesheet" type="text/css" href="css/mine/mine.css"/>
+		<link rel="stylesheet" type="text/css" href="css/fmine.css"/>
+		<link rel="stylesheet" type="text/css" href="css/mine/bootstrap-grid.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/htmleaf-demo.css"/>
+		<link rel="stylesheet" href="http://jrain.oscitas.netdna-cdn.com/tutorial/css/fontawesome-all.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css"/>
+		<link rel="stylesheet" href="//brick.a.ssl.fastly.net/Roboto:400"/>
+				<script src="svg/iconfont.js" type="text/javascript" charset="utf-8"></script>
+			<style>
+				.icon {
+				width: 40px;
+				height: 40px;
+				vertical-align: -0.15em;
+				fill: currentColor;
+				overflow: hidden;
+			}
+		</style>
+				<script type="text/javascript">  
+			 if(window.localStorage){  
+			 var un = localStorage.getItem("username");  
+			 var pas = localStorage.getItem("password");  
+			 //alert(un+pas);  
+			 }else{alert("浏览不支持localStorage")}  
+		</script>
+	</head>
+
+	<body>
+		<script src="js/mui.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+		<div class="mui-card" >
+		<div class="mui-card-header mui-card-media">
+			<img src="img/patient.png"  style="width: 90px;height: 90px; margin: 8px;"/>
+			<div class="mui-media-body">
+				<h4 id="fname">姓名: </h4> 
+				<h4 id="fnum">手机号：</h4>
+				<br /><br>
+			</div>
+		</div>	
+		</div>
+		
+		<div class="mui-card main_nav" >
+			<div class="mui-media-body">
+			<a onclick="openDocinf()">
+			<span class="mui-content-padded mui-icon mui-icon-star collect" ><br><h5>医生</h5></span></a>
+			<a onclick="openFaminf()">
+			<span class="mui-content-padded mui-icon mui-icon-chat chat" ><br><h5>家人</h5></span></a>
+			<a onclick="openFMDetail()">
+			<span class="mui-content-padded mui-icon mui-icon-info info" ><br><h5>账户</h5></span></a>
+			
+			</div>
+		</div>
+		
+		<button type="button" class="mui-btn mui-btn-primary mui-btn-outlined exitbutton" onclick="exitAPP()">退出应用</button>
+
+
+	</body>
+<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+<script type="text/javascript">
+	function exitAPP(){
+		plus.runtime.quit();
+	}
+	function openFMDetail(){
+	    mui.openWindow({
+		url    : 'fmine_detail.html',
+		extras :
+		{}
+	    });
+	}
+	
+	function openDocinf(){
+	    mui.openWindow({
+		url    : 'fdoc_inf.html',
+		extras :
+		{}
+	    });
+	}
+	
+	function openFaminf(){
+	    mui.openWindow({
+		url    : 'fpat_inf.html',
+		extras :
+		{}
+	    });
+	}
+	$.ajax({
+				 url:"http://203.195.148.111:8080/index/index/show_f_info",
+				 withCredentials:true,
+				 data:{un:un},
+				 
+				success: function(data){
+				 var arr1 = data.split("|");
+				 $("#fname").html("姓名："+arr1[0]);
+				 $("#fnum").html("手机："+arr1[1]);
+				     }
+	        });
+</script>
+
+
+</html>

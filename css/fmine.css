@@ -1,0 +1,55 @@
+.main_nav{
+	margin-top: 20px;
+	width: auto;
+	height: 70px;
+}
+.collect{
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	left: 40px;
+	color: #0062CC;
+	top: -1px;
+}
+
+.chat{
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	right: 50%;
+	margin-right: -50px; 
+	color: #0062CC;
+	top: -1px;
+}
+
+.info{
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	right: 40px;
+	color: #0062CC;
+	top: -1px;
+}
+
+.exitbutton {
+  background: white;
+  width: 180px;
+  padding: 4px 0;
+  position: absolute;
+  left: 50%;
+  top: 260px;
+  transform: translateX(-50%) translateY(-50%);
+  border-radius: 3px;
+  
+  }
+
+.exitbutton p {
+   	font-family: 'Roboto'; 
+	text-align: center;
+  	text-transform: uppercase;
+    color: #0062CC;
+	font-size: 20px;
+    user-select: none;
+  }
+  
+
