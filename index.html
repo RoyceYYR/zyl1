@@ -21,8 +21,6 @@
 		 if(window.localStorage){  
 		 var un = localStorage.getItem("username");  
 		 var pas = localStorage.getItem("password");  
-		 var defaT = localStorage.getItem("defatime");
-		 alert(defaT);
 		 //alert(un+pas);  
 		 }else{alert("浏览不支持localStorage")}  
 	</script>
@@ -40,8 +38,6 @@
 </head>
 
 <body>
-	<audio src='http://demo.dcloud.net.cn/test/audio/apple.mp3' preload='auto' id='music'>
-	</audio>
 	<header class="mui-bar mui-bar-nav">
             <h1 class="mui-title" >糖医</h1>
         </header>
@@ -78,23 +74,6 @@
 			<span class="mui-tab-label" ><h4>我的</h4></span>
 		</a>
 	</nav>
-	<script>
-		var arr = defaT.split(":");
-		var sethour = arr[0];
-		var setmin = arr[1];
-		
-		var time=new Date();
-		var minute=time.getMinutes();
-		var hou=time.getHours();
-		var d1=hou>=sethour&&minute>=setmin;
-		var d2=hou>=sethour;
-		if(d1||d2){
-		if(!music.play()){music.play();}//响铃
-		        alert("成功！");//改变字体颜色为红色
-		    }
-		else{music.pause();
-		alert("还是不可以！")}//同理
-	</script>
 	
 <script type="text/javascript">
 mui.init({
