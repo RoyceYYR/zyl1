@@ -121,7 +121,41 @@
 		</div>
 	</div>
 	
+
 		<div class="demo" style="padding: 20px;">
+
+				<a class="mui-tab-item" id="1" style="left: 20px;">
+				
+					<svg class="icon" aria-hidden="true">
+						<use xlink:href="#icon-xingbie1"></use>
+					</svg>
+					<span class="mui-tab-label" style="text-align: center;"><h4 style="color:#1296db" id="patient3">女</h4></span>
+				</a>
+				
+				<a class="mui-tab-item" id="2" style="right:55%;" >
+					<!-- <span class="iconfont icon-shuimian"></span> -->
+					<svg class="icon" aria-hidden="true">
+						<use xlink:href="#icon-nianling"></use>
+					</svg>
+					<span class="mui-tab-label"><h4 style="color:#1296db" id="patient4">46岁</h4></span>
+				</a>
+				
+				<a class="mui-tab-item" id="3" style="left: 55%;">
+					<!-- <span class="iconfont icon-iconxt"></span> -->
+					<svg class="icon" aria-hidden="true">
+						<use xlink:href="#icon-bingshi"></use>
+					</svg>
+					<span class="mui-tab-label" ><h4 style="color:#1296db">5年</h4></span>
+				</a>
+				
+				<a class="mui-tab-item" id="4" style="right: 20px;"> 
+					
+					<svg class="icon" aria-hidden="true" >
+						<use xlink:href="#icon-bingfazheng"></use>
+					</svg>
+					<span class="mui-tab-label" ><h4 style="color:#1296db" id="bfz">糖尿病足</h4></span>
+				</a>
+
 
 		
 		<div class="hj-wrap">
@@ -243,6 +277,44 @@
 					     }
 		         });
 		var pna=localStorage.getItem("pna");
+		$.ajax({
+					 url:"http://203.195.148.111:8080/index/index/bfz",
+					 withCredentials:true,
+					 data:{pna:pna},
+					 
+					success: function(data){
+					 var bfz="";
+					 var arr = data.split("|");
+					 if(arr[0]==1){
+					 	bfz+="失眠 ";
+					 }
+					 if(arr[1]==1){
+					 	bfz+="肾病 ";
+					 }
+					 if(arr[2]==1){
+					 	bfz+="高血脂 ";
+					 }
+					 if(arr[3]==1){
+					 	bfz+="糖尿病足 ";
+					 }
+					 if(arr[4]==1){
+					 	bfz+="贫血 ";
+					 }
+					 if(arr[5]==1){
+					 	bfz+="白内障 ";
+					 }
+					 if(arr[6]==1){
+					 	bfz+="冠心病 ";
+					 }
+					 if(arr[7]==1){
+					 	bfz+="脑血管病 ";
+					 }
+					 if(arr[8]==1){
+					 	bfz+="高血压 ";
+					 }
+					 $("#bfz").html(bfz);
+					     }
+		         });
 		$.ajax({
 					 url:"http://203.195.148.111:8080/index/index/chartforp",
 					 withCredentials:true,
