@@ -5,4 +5,21 @@
 	margin-left: 10px;
 }
 
+.text h4{
+	color: #1296db;
+	margin-left: 30px;
+	padding: 20px;
+}
+
+.text1 h4{
+	color: #1296db;
+	width: 100%;
+	padding-top: 10px;
+	display: block;
+	padding-left: 60px;
+	word-break: break-all;
+	word-wrap: break-word; 
+	overflow: hidden;
+	text-overflow:ellipsis;
+}
  
