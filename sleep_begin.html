@@ -28,6 +28,9 @@
 					 	var un = localStorage.getItem("username");
 						var pas = localStorage.getItem("password");
 						//alert(un+pas);
+						var defaT = localStorage.getItem("defatime");
+						var naoxing = localStorage.getItem("nx");
+						var naozhong = localStorage.getItem("nz");
 					}else{alert("浏览不支持localStorage")};
 	</script>
 	<script src="svg/iconfont.js" type="text/javascript" charset="utf-8"></script>
@@ -79,6 +82,64 @@
 		
 		<button type="button" class="returnreport" onclick="openReport()">返回报告</button>
 		
+		<script>
+			var arr = defaT.split(":");
+			var sethour = arr[0];
+			var setmin = arr[1];
+			if(setmin<naoxing*5){
+				sethour = sethour-1;
+				setmin = 60 - (5*naoxing - setmin);
+			
+			}
+			else{
+				setmin = setmin-5*naoxing;
+			}
+			var stop = document.getElementById("stopBtn");
+			window.onload=function(){
+			function showTime(){
+				var time=new Date();
+				var minute=time.getMinutes();
+				var hou=time.getHours();
+				var d1=hou>=sethour&&minute>=setmin;
+				var d2=hou>=sethour;
+				//此处设定dt=1为浅睡
+				if((d1||d2)&dt==1){
+					if(naozhong==1){
+					if(!music.play()){music.play();}//响铃
+						alert("成功1");
+							//改变字体颜色为红色
+							}
+					if(naozhong==2){
+					if(!music.play()){music.play();}//响铃
+						alert("成功2");
+							//改变字体颜色为红色
+							}
+					if(naozhong==3){
+					if(!music.play()){music.play();}//响铃
+						alert("成功3");
+							//改变字体颜色为红色
+							}		
+					if(naozhong==4){
+					if(!music.play()){music.play();}//响铃
+						alert("成功4");
+							//改变字体颜色为红色
+							}	
+					if(naozhong==5){
+					if(!music.play()){music.play();}//响铃
+						alert("成功5");
+							//改变字体颜色为红色
+							}	
+					}
+				else{music.pause();
+				alert("还是不可以！")}//同理
+			}
+			showTime();
+			var timer=setInterval(showTime,1000);
+			stop.onclick=function(){
+			sethour=24;
+			}}
+			
+		</script>
 	</body>
 <script>
 		var dt1=1;
