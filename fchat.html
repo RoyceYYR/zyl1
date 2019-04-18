@@ -52,7 +52,7 @@
 			        
 			    </div>	
 			    
-			    <div id="chatview" class="p1">    	
+			    <div id="chatview" class="p1" >    	
 			        <div id="profile">
 
 			            <div id="close">
@@ -63,10 +63,10 @@
 			            <p>Miro Badev</p>
 			            <span>miro@badev@gmail.com</span>
 			        </div>
-			        <div id="chat-messages">
-			        	<label>2019/05/20</label>
+			        <div id="chat-messages" >
+			        	<!-- <label>2019/05/20</label> -->
 			            
-			            <div class="message">
+			            <!-- <div class="message">
 			            	<img src="img/1_copy.jpg" />
 			                <div class="bubble">
 			                	嘤嘤嘤我昨天又没有睡着
@@ -110,13 +110,18 @@
 			                    <span>刚刚</span>
 			                </div>
 			            </div>
-			            
+			            -->
 			        </div>
 			    	
-			        <div id="sendmessage">
-			        	<input type="text" value="Send message..." />
-			            <button id="send"></button>
-			        </div>
+					<form action="" method="get" id="sendmessage">
+						<!-- <input type="text" value="Send message..." />
+			            <input type="submit" name="" id="" value="发送" /> -->
+						
+						<input type="text" name="title" id="title" value="请输入文章标题" />
+						<textarea  name="body" id="body"  placeholder="请输入文章内容"></textarea>
+						<input type="submit" name="" id="submit" onclick="send()" value="发送" />
+					</form>
+			        
 			    
 			    </div>        
 			</div>	
@@ -139,16 +144,26 @@
 	            $(this).val('Search contacts...');
 	        }
 	    });
-	    $('#sendmessage input').focus(function () {
-	        if ($(this).val() == 'Send message...') {
+	    $('#sendmessage #title').focus(function () {
+	        if ($(this).val() == '请输入文章标题') {
 	            $(this).val('');
 	        }
 	    });
-	    $('#sendmessage input').focusout(function () {
+	    $('#sendmessage #title').focusout(function () {
 	        if ($(this).val() == '') {
-	            $(this).val('Send message...');
+	            $(this).val('请输入文章标题');
 	        }
 	    });
+// 		$('#sendmessage #body').focus(function () {
+// 		    if ($(this).val() == '请输入文章内容') {
+// 		        $(this).val('');
+// 		    }
+// 		});
+// 		$('#sendmessage #body').focusout(function () {
+// 		    if ($(this).val() == '') {
+// 		        $(this).val('请输入文章内容');
+// 		    }
+// 		});
 	    $('.friend').each(function () {
 	        $(this).click(function () {
 	            var childOffset = $(this).offset();
@@ -201,6 +216,19 @@
 	        });
 	    });
 	});
+	function send(){
+		var title=document.getElementById("title").value;
+		var body=document.getElementById("body").value;
+		$.ajax({
+			 url:"http://203.195.148.111:8080/index/index/store_rgdata",
+			 withCredentials:true,
+			 data: {title: title ,body: body},
+			 
+			success: function(data){
+				alert("发送成功！")
+			     }
+		});
+	}
 	</script>
 </body>
 </html>
