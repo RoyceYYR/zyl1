@@ -115,7 +115,7 @@ body {
 	top:0;
 	left:0;	
 	display:none;
-	background:#fff;
+	background:#F0F0F0;
 	text-align: center;
 }
 #profile{
@@ -158,7 +158,7 @@ body {
 	font-weight:400;
 	font-size:11px;
 }
-#chat-messages{
+/* #chat-messages{
 	opacity:0;
 	margin-top:30px;
 	width:100%;
@@ -240,47 +240,61 @@ div.message.right .corner{
 	  position: absolute;
 	  right: 0;
 	  bottom: -22px;
-}
+} */
 #sendmessage{
-	height:60px;
+	height:600px;
 	border-top:1px solid #e7ebee;	
 	position:absolute;
 	bottom:0;
 	right:0px;
 	width:100%;
 	background:#fff;
-	padding-bottm:50px;
+	padding:10px;
 }
 #sendmessage input{
 	border
 }
 #sendmessage input{
 	background:#fff;
-	margin:21px 0 0 21px;
-	border:none;
-	padding:0;
+	margin-top:10px;
+	border:1px solid #aab8c2;
 	font-size:14px;
 	font-family:"Open Sans", sans-serif; 
 	font-weight:400px;
-	color:#aab8c2;
+	/* color:#aab8c2; */
 }
 #sendmessage input:focus{
 	 outline: 0;
 }
-#sendmessage button{
-	background:#fff url("../img/send.png") 0 -41px no-repeat;
-	width:30px;
-	height:30px;
-	position:absolute;
-	right: 15px;
-	top: 23px;
-	border:none;
+
+#sendmessage #title{
+	text-align: center;	
+	width: 50%;
 }
-#sendmessage button:hover{
+
+#sendmessage #body{
+	margin-top: 20px;
+	width: 90%;
+	size: auto;
+	height: 60%;
+}
+
+#sendmessage #submit{
+	/* background:#fff url("../img/send.png") 0 -41px no-repeat; */
+	color: #000000;
+	width:100px;
+	height:40px;
+	position:absolute;
+	right: 50%;
+	margin-right: -50px;
+	margin-top: 95%;
+	border:1px solid;
+}
+#sendmessage #submit:hover{
 	cursor:pointer;
 	background-position: 0 0 ;
 }
-#sendmessage button:focus{
+#sendmessage #submit:focus{
 	 outline: 0;	 
 }
 
