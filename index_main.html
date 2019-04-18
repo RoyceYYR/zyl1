@@ -180,12 +180,12 @@
 				                            <img src="img/sleep.png" alt=""/>
 				                        </div> -->
 				                        <ul class="post-bar">
-				                            <li><i class="fa fa-users"></i> <a href="mine_doctor_inf.html">发布者：Dr.X</a></li>
-				                            <li><i class="fa fa-clock-o"></i> 发布时间：2019/01/01</li>
+				                            <li><i class="fa fa-users"></i> <a href="mine_doctor_inf.html" id="dna">发布者：Dr.X</a></li>
+				                            <li><i class="fa fa-clock-o"></i> 发布时间：2019/04/21</li>
 				               
 				                        </ul>
 				                        <p class="post-description">
-				                           <h2>最近睡眠不太好，今天记得早睡哦～</h2> 
+				                           <h2 id="msg">最近睡眠不太好，今天记得早睡哦～</h2> 
 				                        </p>
 				                        <a onclick="openAdvice()" class="read-more">点此查看建议详情</a><br>
 										<a onclick="openHistory()" class="read-more" style="color: #000099;">点此查看历史提醒</a>
@@ -415,6 +415,16 @@
 					 $("#score").html(arr1[4]);
 					 $("#bs").html(arr1[5]);
 					 $("#slp").html(arr1[6]);
+					     }
+		         });
+		$.ajax({
+					 url:"http://203.195.148.111:8080/index/index/pimsg",
+					 data:{un:un},
+					 
+					success: function(data){
+					 var arr1 = data.split("|");
+					 $("#msg").html(arr1[0]);
+					  $("#dna").html("发布者： "+arr1[1]);
 					     }
 		         });
 		function openBlood(){
