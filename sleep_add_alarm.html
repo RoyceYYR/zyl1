@@ -35,8 +35,7 @@
 			<div class="main"><br><br>
 				<center>
 					<h1>请选择闹钟时间：</h1>
-				<input class="time" type="text" value="14:30" onchange="console.log('Time changed')" />
-			
+				<input class="time" id="defa" type="text" value="14:30" onchange="console.log('Time changed')" />
 				</center>
 				</div>
 		</div>
@@ -47,8 +46,12 @@
 			$(document).ready(function() {
 				$('.time').clockTimePicker({});
 			});
+
 		</script>
 		
+		
+		
+		<!-- 这个不会…… -->
 		<div id="1" class="mui-input-group">
 				<div class="mui-input-row">
 				<label>重复</label>
@@ -71,12 +74,12 @@
 				<label>闹醒区间</label>
 				<a class="mui-navigate-right">
 				<span class="mui-badge1">
-				<select class="mui-h5" style="margin:auto; color:#000;">
-					<option value="">无</option>
+				<select class="mui-h5" style="margin:auto; color:#000;" id="naoxing">
+					<option value="0">无</option>
 					<option value="1">前后5分钟</option>
-					<option value="1">前后10分钟</option>
-					<option value="1">前后15分钟</option>
-					<option value="1">前后20分钟</option>
+					<option value="2">前后10分钟</option>
+					<option value="3">前后15分钟</option>
+					<option value="4">前后20分钟</option>
 				</select>
 				</span> 
 				</a>
@@ -88,12 +91,12 @@
 				<label>闹钟铃声</label>
 				<a class="mui-navigate-right">
 				<span class="mui-badge1">
-				<select class="mui-h5" style="margin:auto; color:#000;">
-					<option value="">跟随系统</option>
-					<option value="1">闹钟1</option>
-					<option value="1">闹钟2</option>
-					<option value="1">闹钟3</option>
-					<option value="1">闹钟4</option>
+				<select class="mui-h5" style="margin:auto; color:#000;" id="naozhong">
+					<option value="1">跟随系统</option>
+					<option value="2">闹钟1</option>
+					<option value="3">闹钟2</option>
+					<option value="4">闹钟3</option>
+					<option value="5">闹钟4</option>
 				</select>
 				</span> 
 				</a>
@@ -107,18 +110,37 @@
 				<span class="mui-badge1">
 				<select class="mui-h5" style="margin:auto; color:#000;">
 					<option value="1">是</option>
-					<option value="1">否</option>
+					<option value="2">否</option>
 				</select>
 				</span> 
 				</a>
 			</div>
 		</div>
-		
 		<form action="index.html" method="get" id="subalarm" style="text-align: center; margin-top: 80px;">
-			<input type="submit" value="确定">
+			<input id='submit' type="submit" value="确定">
 		</form>
 		
-		
+	<!-- <script src="https://code.jquery.com/jquery-3.1.0.js"></script> -->
+	
+	<script>
+			 $(document).ready(function () {
+			 	$("#submit").click(function(){
+					var defatime = $("#defa").val();
+					var nx = $("#naoxing").val();
+					var nz = $("#naozhong").val();
+					if(window.localStorage){		
+						var defatime = document.getElementById("defa").value;
+					 	localStorage.setItem("defatime",defatime);
+						var nx = document.getElementById("naoxing").value;
+						localStorage.setItem("nx",nx);
+						var nz = document.getElementById("naozhong").value;
+						localStorage.setItem("nz",nz);
+					}else{alert("浏览不支持localStorage")}				
+					var defatime = $("#defatime").val();
+				});
+			 })
+			
+	</script>
 	</body>
 <script type="text/javascript">
 	function openSleep(){
@@ -128,5 +150,14 @@
 		{}
 	    });
 	}
+// 	 function getContent(value,content){
+// 
+// 		alert("选中的值是"+value+"选中的内容是"+content);
+// 		var nx = value;
+// 		localStorage.setItem("nx",nx);
+// 		
+// }
+
+	
 </script>
 </html>
