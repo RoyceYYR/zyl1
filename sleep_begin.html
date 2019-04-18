@@ -60,6 +60,19 @@
 		<header class="mui-bar mui-bar-nav">
 			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" href="index.html" onclick="openSleep()"></a>
 			<h1 class="mui-title">开始睡眠</h1>
+			<audio src='http://hao.haolingsheng.com/ring/000/995/3e3966097062ba7638a0aba60d898b48.mp3' preload='auto' id='music1'>	
+			</audio>
+			
+			<audio src='http://hao.haolingsheng.com/ring/000/995/f1b408f77bc8d27a6f5665c1be02df5d.mp3' preload='auto' id='music2'>	
+			</audio>
+			
+			<audio src='http://hao.haolingsheng.com/ring/000/995/899004608491de178a7234ab5538feb9.mp3' preload='auto' id='music3'>	
+			</audio>
+			
+			<audio src='http://hao.haolingsheng.com/ring/000/995/3428620bff41797ca0fde66a1a47b0fc.mp3' preload='auto' id='music4'>	
+			</audio>
+			<audio src='http://hao.haolingsheng.com/ring/000/995/bde5a74a2520d82b8ed6d51c227f383c.mp3' preload='auto' id='music5'>	
+			</audio>
 		</header>
 		
 		<article class="htmleaf-container">
@@ -102,35 +115,37 @@
 				var hou=time.getHours();
 				var d1=hou>=sethour&&minute>=setmin;
 				var d2=hou>=sethour;
+				// var dt = 1;
 				//此处设定dt=1为浅睡
 				if((d1||d2)&dt==1){
 					if(naozhong==1){
-					if(!music.play()){music.play();}//响铃
-						alert("成功1");
+					if(!music1.play()){music1.play();}//响铃
+						// alert("成功1");
 							//改变字体颜色为红色
 							}
 					if(naozhong==2){
-					if(!music.play()){music.play();}//响铃
-						alert("成功2");
-							//改变字体颜色为红色
+					if(!music2.play()){music2.play();}//响铃
+// 						alert("成功2");
+// 							//改变字体颜色为红色
 							}
 					if(naozhong==3){
-					if(!music.play()){music.play();}//响铃
-						alert("成功3");
-							//改变字体颜色为红色
+					if(!music3.play()){music3.play();}//响铃
+// 						alert("成功3");
+// 							//改变字体颜色为红色
 							}		
 					if(naozhong==4){
-					if(!music.play()){music.play();}//响铃
-						alert("成功4");
-							//改变字体颜色为红色
+					if(!music4.play()){music4.play();}//响铃
+// 						alert("成功4");
+// 							//改变字体颜色为红色
 							}	
 					if(naozhong==5){
-					if(!music.play()){music.play();}//响铃
-						alert("成功5");
+					if(!music5.play()){music5.play();}//响铃
 							//改变字体颜色为红色
-							}	
+// 						alert("成功5");
+// 						
+	}	
 					}
-				else{music.pause();
+				else{music1.pause();
 				alert("还是不可以！")}//同理
 			}
 			showTime();
