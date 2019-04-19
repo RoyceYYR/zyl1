@@ -1,234 +1,97 @@
-<!doctype html>
-<html lang="zh">
-<head>
-	<meta charset="UTF-8">
-	<link rel="stylesheet" type="text/css" href="css/mui.css"/>
-	<link rel="stylesheet" type="text/css" href="css/common.css"/>
-	<link rel="stylesheet" type="text/css" href="css/doctor/normalize.css" />
-	<link rel="stylesheet" type="text/css" href="css/doctor/default.css">
-	<link rel="stylesheet" type="text/css" href="css/doctor/styles_msg.css">
-	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
-		<script type="text/javascript">  
-			 if(window.localStorage){  
-			 var un = localStorage.getItem("username");  
-			 var pas = localStorage.getItem("password");  
-			 //alert(un+pas);  
-			 }else{alert("浏览不支持localStorage")}  
-		</script>
-</head>
-<body>
-	<script src="js/mui.js"></script>
-	<script type="text/javascript">
-		mui.init()
-	</script>
-	<div class="htmleaf-container">
-			<div id="chatbox">
-				<div id="friendslist">
-			        
-			        <div id="friends">
-						<div id="search">
-						    <input type="text" id="searchfield" value="搜索联系人" />
-						</div>
-			        	<div class="friend">
-			            	<img src="img/1_copy.jpg" />
-			                <p>
-			                	<strong>Dr.X</strong><br>
-				                <span>3条未读</span>
-			                </p>
-			                <div class="status available"></div>
-			            </div>
-			            
-			            <div class="friend">
-			            	<img src="img/2_copy.jpg" />
-			                <p>
-			                	<strong>个榆木</strong><br>
-				                <span>2条未读</span>
-			                </p>
-			                <div class="status away"></div>
-			            </div>
-			            
-			            
-			        </div>                
-			        
-			    </div>	
-			    
-			    <div id="chatview" class="p1" >    	
-			        <div id="profile">
-
-			            <div id="close">
-			                <div class="cy"></div>
-			                <div class="cx"></div>
-			            </div>
-			            
-			            <p>Miro Badev</p>
-			            <span>miro@badev@gmail.com</span>
-			        </div>
-			        <div id="chat-messages" >
-			        	<!-- <label>2019/05/20</label> -->
-			            
-			            <!-- <div class="message">
-			            	<img src="img/1_copy.jpg" />
-			                <div class="bubble">
-			                	嘤嘤嘤我昨天又没有睡着
-			                    <div class="corner"></div>
-			                    <span>3 分钟前</span>
-			                </div>
-			            </div>
-			            
-			            <div class="message right">
-			            	<img src="img/2_copy.jpg" />
-			                <div class="bubble">
-			                	乖，可以数羊
-			                    <div class="corner"></div>
-			                    <span>1 分钟前</span>
-			                </div>
-			            </div>
-			            
-			            <div class="message">
-			            	<img src="img/1_copy.jpg" />
-			                <div class="bubble">
-			                	好哒，医生你好赞哦！
-			                    <div class="corner"></div>
-			                    <span>1分钟前</span>
-			                </div>
-			            </div>
-			            
-			            <div class="message right">
-			            	<img src="img/2_copy.jpg" />
-			                <div class="bubble">
-			                	你能将睡眠报告分享一下吗
-			                    <div class="corner"></div>
-			                    <span>1 分钟前</span>
-			                </div>
-			            </div>
-			            
-			            <div class="message">
-			            	<img src="img/1_copy.jpg" />
-			                <div class="bubble">
-			                	我发过来啦，你接住哦！
-			                    <div class="corner"></div>
-			                    <span>刚刚</span>
-			                </div>
-			            </div>
-			            -->
-			        </div>
-			    	
-					<form action="" method="get" id="sendmessage">
-						<!-- <input type="text" value="Send message..." />
-			            <input type="submit" name="" id="" value="发送" /> -->
-						
-						<input type="text" name="title" id="title" value="请输入文章标题" />
-						<textarea  name="body" id="body"  placeholder="请输入文章内容"></textarea>
-						<input type="submit" name="" id="submit" onclick="send()" value="发送" />
-					</form>
-			        
-			    
-			    </div>        
-			</div>	
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/common.css"/>
+		<link rel="stylesheet" type="text/css" href="css/mui.css"/>
+		<script src="//at.alicdn.com/t/font_1079802_wvjoltyaiae.js" type="text/javascript" charset="utf-8"></script>
+		<style>
+				.title1{
+					width: 200px;
+					height: 50px;
+					padding: 20px;
+				}
+				
+				.icon {
+				width: 45px;
+				height: 45px;
+				font-weight: bold;
+				vertical-align: -0.15em;
+				fill: currentColor;
+				overflow: hidden;}
+				
+				.word1{
+					float: right;
+					line-height: 30px;
+				}
+				
+		</style>
+	</head>
+	<body>
 		
+		<div  class="title1" > 
+			<svg class="icon" aria-hidden="true">
+				<use xlink:href="#icon-kepuxinxi"></use>
+			</svg>
+			<h3 class="word1">历史提醒</h3>
+		</div> 
 		
-	</div>
+		<div style="margin-top: 40px;">
+			<ul class="mui-table-view" >
+    <li class="mui-table-view-cell mui-media" style="height: 80px;">
+        <a href="javascript:;">
+            <img class="mui-media-object mui-pull-left" src="img/Fox.svg" style="margin: 10px;">
+            <div class="mui-media-body">
+                <h4>幸福</h4> 
+                <p class="mui-ellipsis">能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？</p>
+            </div>
+        </a>
+    </li>
+    <li class="mui-table-view-cell mui-media" style="height: 80px;">
+        <a href="javascript:;">
+            <img class="mui-media-object mui-pull-left" src="img/Bear.svg" style="margin: 10px;">
+            <div class="mui-media-body">
+                <h4>幸福</h4> 
+                <p class="mui-ellipsis">想要这样一间小木屋，夏天挫冰吃瓜，冬天围炉取暖.</p>
+            </div>
+        </a>
+    </li>
+    <li class="mui-table-view-cell mui-media" style="height: 80px;">
+        <a href="javascript:;">
+            <img class="mui-media-object mui-pull-left" src="img/Mouse.svg" style="margin: 10px;">
+            <div class="mui-media-body">
+                <h4>幸福</h4> 
+                <p class="mui-ellipsis">烤炉模式的城，到黄昏，如同打翻的调色盘一般.</p>
+            </div>
+        </a>
+    </li>
+</ul>
 	
-	<script src="js/jquery-1.11.0.min.js"></script>
-	<script>
-	$(document).ready(function () {
-	    var preloadbg = document.createElement('img');
-	    preloadbg.src = 'img/timeline1.png';
-	    $('#searchfield').focus(function () {
-	        if ($(this).val() == 'Search contacts...') {
-	            $(this).val('');
-	        }
-	    });
-	    $('#searchfield').focusout(function () {
-	        if ($(this).val() == '') {
-	            $(this).val('Search contacts...');
-	        }
-	    });
-	    $('#sendmessage #title').focus(function () {
-	        if ($(this).val() == '请输入文章标题') {
-	            $(this).val('');
-	        }
-	    });
-	    $('#sendmessage #title').focusout(function () {
-	        if ($(this).val() == '') {
-	            $(this).val('请输入文章标题');
-	        }
-	    });
-// 		$('#sendmessage #body').focus(function () {
-// 		    if ($(this).val() == '请输入文章内容') {
-// 		        $(this).val('');
-// 		    }
-// 		});
-// 		$('#sendmessage #body').focusout(function () {
-// 		    if ($(this).val() == '') {
-// 		        $(this).val('请输入文章内容');
-// 		    }
-// 		});
-	    $('.friend').each(function () {
-	        $(this).click(function () {
-	            var childOffset = $(this).offset();
-	            var parentOffset = $(this).parent().parent().offset();
-	            var childTop = childOffset.top - parentOffset.top;
-	            var clone = $(this).find('img').eq(0).clone();
-	            var top = childTop + 12 + 'px';
-	            $(clone).css({ 'top': top }).addClass('floatingImg').appendTo('#chatbox');
-	            setTimeout(function () {
-	                $('#profile p').addClass('animate');
-	                $('#profile').addClass('animate');
-	            }, 100);
-	            setTimeout(function () {
-	                $('#chat-messages').addClass('animate');
-	                $('.cx, .cy').addClass('s1');
-	                setTimeout(function () {
-	                    $('.cx, .cy').addClass('s2');
-	                }, 100);
-	                setTimeout(function () {
-	                    $('.cx, .cy').addClass('s3');
-	                }, 200);
-	            }, 150);
-	            $('.floatingImg').animate({
-	                'width': '68px',
-	                'left': '42%',
-	                'top': '20px'
-	            }, 200);
-	            var name = $(this).find('p strong').html();
-	            var email = $(this).find('p span').html();
-	            $('#profile p').html(name);
-	            $('#profile span').html(email);
-	            $('.message').not('.right').find('img').attr('src', $(clone).attr('src'));
-	            $('#friendslist').fadeOut();
-	            $('#chatview').fadeIn();
-	            $('#close').unbind('click').click(function () {
-	                $('#chat-messages, #profile, #profile p').removeClass('animate');
-	                $('.cx, .cy').removeClass('s1 s2 s3');
-	                $('.floatingImg').animate({
-	                    'width': '40px',
-	                    'top': top,
-	                    'left': '12px'
-	                }, 200, function () {
-	                    $('.floatingImg').remove();
-	                });
-	                setTimeout(function () {
-	                    $('#chatview').fadeOut();
-	                    $('#friendslist').fadeIn();
-	                }, 50);
-	            });
-	        });
-	    });
-	});
-	function send(){
-		var title=document.getElementById("title").value;
-		var body=document.getElementById("body").value;
-		$.ajax({
-			 url:"http://203.195.148.111:8080/index/index/store_rgdata",
-			 withCredentials:true,
-			 data: {title: title ,body: body},
-			 
-			success: function(data){
-				alert("发送成功！")
-			     }
-		});
-	}
-	</script>
-</body>
+		</div>
+		
+		<div  class="title1" > 
+			<svg class="icon" aria-hidden="true">
+				<use xlink:href="#icon-ziliao"></use>
+			</svg>
+			<h3 class="word1">书籍推荐</h3>
+		</div>
+		
+		<div class="mui-card" style="margin-top: 40px;">
+	<!--页眉，放置标题-->
+	<div class="mui-card-header"> <h4>《揭秘糖尿病防治误区》</h4></div>
+	<!--内容区-->
+	<div class="mui-card-content" style="text-align: center;margin: 10px;"><img src="images/book.jpeg" style="width: 70%; "></div>
+	<!--页脚，放置补充信息或支持的操作-->
+	<div class="mui-card-footer">控糖误区一一解开:
+
+对于糖尿病，中药是不是比西药好？
+
+控制饮食，不吃主食是不是就行了？
+
+关于这些问题，您是不是都曾有过疑问？而这本书收录了包括饮食、运动、用药等糖友最关心383个问题，从发病机制到诊断，旨在帮助糖友走出误区，不让它们影响血糖。如果您对糖尿病的一些问题犹疑不定，那这本书一定能让您找到答案。</div>
+</div>
+		
+	</body>
 </html>
