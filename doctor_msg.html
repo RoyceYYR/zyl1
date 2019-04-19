@@ -299,7 +299,7 @@
 				var body=document.getElementById("body").value;
 				$.ajax({
 					 url:"http://203.195.148.111:8080/index/index/imsg",
-					 data: {un:un,pna:pna,body: body},
+					 data: {un:un,pna:pna,body: body,title:title},
 					 
 					success: function(data){
 						alert(data)
