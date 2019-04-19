@@ -476,4 +476,18 @@
 		    });
 		}
 	</script>
+        <script>
+		
+		window.onclick = function(event) {
+		var date=document.getElementById("date").value;
+		$.ajax({url:"http://203.195.148.111:8080/index/index/checkbyday",
+		data: {un:un,date:date},
+		success:function(data) {
+			var arr1 = data.split("|");
+			$("#score").html(arr1[1]);
+			$("#slp").html(arr1[0].substring(0,1));
+			}
+	     })
+		 }
+	</script>
 </html>
