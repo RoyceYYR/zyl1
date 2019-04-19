@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="css/mui.min.css"/>
+	<link rel="stylesheet" type="text/css" href="css/mine/reset.css" />
+	<link rel="stylesheet" type="text/css" href="css/mine/default.css">
+	<link rel="stylesheet" type="text/css" href="css/common.css"/>
+	<link rel="stylesheet" type="text/css" href="css/mine/styles_advise.css">
+	<link rel="stylesheet" type="text/css" href="css/mine/mine_advise_detail.css"/>
+		<script type="text/javascript">  
+			 if(window.localStorage){  
+			 var un = localStorage.getItem("username");  
+			 var pas = localStorage.getItem("password");  
+			 //alert(un+pas);  
+			 }else{alert("浏览不支持localStorage")}  
+		</script>
+</head>
+<body>
+	
+	<header class="mui-bar mui-bar-nav">
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" href="family_main.html" onclick="openID()"></a>	
+		<h1 class="mui-title">建议详情</h1>
+	</header>
+	
+	<article class="htmleaf-container" style="background: #F0F0F0">
+		
+		<div class="card" >
+		  <div class="products" >
+		    <div class="product active">
+		      <div class="thumbnail"><img src="img/sleep.png" /></div>
+		      <h1 class="title">早睡早起身体好</h1>
+		      <p class="description"> 最近您的睡眠状态并不好，质量差的睡眠也会影响血糖水平的浮动，建议早睡早起，保证充足睡眠，失眠时可以播放白噪音帮助睡眠。</p>
+		    </div>  
+		  </div>
+		  <div class="footer"><button type="button" class="btn" id="known" style="text-align: center; width: 100px; left: 50%; margin-left: -50px;"  onclick="openMine()">我知道了</button></div>
+		</div>
+		
+	</article>
+	
+	<script src="js/stopExecutionOnTimeout.js?t=1" type="text/javascript"></script>
+	<script src="js/jquery-1.11.0.min.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function () {
+	    var getProductHeight = $('.product.active').height();
+	    $('.products').css({ height: getProductHeight });
+	    function calcProductHeight() {
+	        getProductHeight = $('.product.active').height();
+	        $('.products').css({ height: getProductHeight });
+	    }
+	    function animateContentColor() {
+	        var getProductColor = $('.product.active').attr('product-color');
+	        $('body').css({ background: getProductColor });
+	        $('.title').css({ color: getProductColor });
+	        $('.btn').css({ color: getProductColor });
+	    }
+
+		$("#known").click(function(){
+			history.go(-1);
+		});
+	    var productItem = $('.product'), productCurrentItem = productItem.filter('.active');
+	    
+	    $('[ripple]').on('click', function (e) {
+	        var rippleDiv = $('<div class="ripple" />'), rippleSize = 60, rippleOffset = $(this).offset(), rippleY = e.pageY - rippleOffset.top, rippleX = e.pageX - rippleOffset.left, ripple = $('.ripple');
+	        rippleDiv.css({
+	            top: rippleY - rippleSize / 2,
+	            left: rippleX - rippleSize / 2,
+	            background: $(this).attr('ripple-color')
+	        }).appendTo($(this));
+	        window.setTimeout(function () {
+	            rippleDiv.remove();
+	        }, 1900);
+	    });
+	});
+
+	</script>
+</body>
+</html>
