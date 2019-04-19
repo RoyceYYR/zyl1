@@ -41,10 +41,10 @@
 		
 	</article>
 	<script>
+		var title = localStorage.getItem("title");
+		$("#imsg").html(title);
 		var msg = localStorage.getItem("msg");
-		$("#imsg").html(msg);
-		var dna = localStorage.getItem("dna");
-		$("#dna").html("发布者："+dna);
+		$("#dna").html(msg);
 	</script>
 	<script src="js/stopExecutionOnTimeout.js?t=1" type="text/javascript"></script>
 	<script src="js/jquery-1.11.0.min.js"></script>
