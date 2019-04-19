@@ -423,8 +423,11 @@
 					 
 					success: function(data){
 					 var arr1 = data.split("|");
-					 $("#msg").html(arr1[0]);
+					 $("#msg").html(arr1[2]);
 					  $("#dna").html("发布者： "+arr1[1]);
+					  localStorage.setItem("msg",arr1[0]);
+					  localStorage.setItem("dna",arr1[1]);
+					  localStorage.setItem("title",arr1[2]);
 					     }
 		         });
 		function openBlood(){
