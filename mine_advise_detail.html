@@ -17,6 +17,7 @@
 			 //alert(un+pas);  
 			 }else{alert("浏览不支持localStorage")}  
 		</script>
+	<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
 </head>
 <body>
 	
@@ -31,15 +32,20 @@
 		  <div class="products" >
 		    <div class="product active">
 		      <div class="thumbnail"><img src="img/sleep.png" /></div>
-		      <h1 class="title">早睡早起身体好</h1>
-		      <p class="description"> 最近您的睡眠状态并不好，质量差的睡眠也会影响血糖水平的浮动，建议早睡早起，保证充足睡眠，失眠时可以播放白噪音帮助睡眠。</p>
+		      <h1 class="title" id="imsg">早睡早起身体好</h1>
+		      <p class="description" id="dna"> 最近您的睡眠状态并不好，质量差的睡眠也会影响血糖水平的浮动，建议早睡早起，保证充足睡眠，失眠时可以播放白噪音帮助睡眠。</p>
 		    </div>  
 		  </div>
 		  <div class="footer"><button type="button" class="btn" id="known" style="text-align: center; width: 100px; left: 50%; margin-left: -50px;"  onclick="openMine()">我知道了</button></div>
 		</div>
 		
 	</article>
-	
+	<script>
+		var msg = localStorage.getItem("msg");
+		$("#imsg").html(msg);
+		var dna = localStorage.getItem("dna");
+		$("#dna").html("发布者："+dna);
+	</script>
 	<script src="js/stopExecutionOnTimeout.js?t=1" type="text/javascript"></script>
 	<script src="js/jquery-1.11.0.min.js"></script>
 	<script type="text/javascript">
