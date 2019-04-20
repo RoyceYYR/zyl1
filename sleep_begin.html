@@ -115,7 +115,7 @@
 				var hou=time.getHours();
 				var d1=hou>=sethour&&minute>=setmin;
 				var d2=hou>=sethour;
-				// var dt = 1;
+				var dt = 1;
 				//此处设定dt=1为浅睡
 				if((d1||d2)&dt==1){
 					if(naozhong==1){
@@ -218,7 +218,8 @@
 			data: {dt1:dt1,dt2:dt2,dt3:dt3,dt4:dt4,dt5:dt5,dt6:dt6},
 			
 			success:function(data) {
-				alert(data)}
+				// alert(data);
+				}
 				})
 	         }
 	 
