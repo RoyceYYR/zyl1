@@ -89,13 +89,69 @@
 			            <p>Miro Badev</p>
 			            <span>miro@badev@gmail.com</span>
 			        </div>
+
 			 
 			        <div action="" method="get" id="sendmessage" style="top: 153px;">	
+
+			        <!-- <div id="chat-messages">
+			        	<label>2019/05/20</label>
+			            
+			            <div class="message">
+			            	<img src="img/1_copy.jpg" />
+			                <div class="bubble">
+			                	嘤嘤嘤我昨天又没有睡着
+			                    <div class="corner"></div>
+			                    <span>3 分钟前</span>
+			                </div>
+			            </div>
+			            
+			            <div class="message right">
+			            	<img src="img/2_copy.jpg" />
+			                <div class="bubble">
+			                	乖，可以数羊
+			                    <div class="corner"></div>
+			                    <span>1 分钟前</span>
+			                </div>
+			            </div>
+			            
+			            <div class="message">
+			            	<img src="img/1_copy.jpg" />
+			                <div class="bubble">
+			                	好哒，医生你好赞哦！
+			                    <div class="corner"></div>
+			                    <span>1分钟前</span>
+			                </div>
+			            </div>
+			            
+			            <div class="message right">
+			            	<img src="img/2_copy.jpg" />
+			                <div class="bubble">
+			                	你能将睡眠报告分享一下吗
+			                    <div class="corner"></div>
+			                    <span>1 分钟前</span>
+			                </div>
+			            </div>
+			            
+			            <div class="message">
+			            	<img src="img/1_copy.jpg" />
+			                <div class="bubble">
+			                	我发过来啦，你接住哦！
+			                    <div class="corner"></div>
+			                    <span>刚刚</span>
+			                </div>
+			            </div>
+			            
+			        </div>
+			    	 -->
+			        	<!-- <input type="text" value="Send message..." />
+			            <input type="submit" name="" id="" value="发送" /> -->
+			        <div action="" method="get" id="sendmessage">	
+
 			        	<input type="text" name="title" id="title" value="请输入文章标题" />
 			        	<textarea  name="body" id="body"  placeholder="请输入文章内容"></textarea>
 			        	<input type="submit" name="" id="submit" onclick="send()" value="发送" />
 			        </div>
-					
+
 			    </div>        
 			</div>	
 		
@@ -253,7 +309,7 @@
 					 
 					success: function(data){
 						alert(data)
-						alert("发送成功！")
+
 					     }
 				});
 			}

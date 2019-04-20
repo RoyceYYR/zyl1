@@ -28,6 +28,9 @@
 					 	var un = localStorage.getItem("username");
 						var pas = localStorage.getItem("password");
 						//alert(un+pas);
+						var defaT = localStorage.getItem("defatime");
+						var naoxing = localStorage.getItem("nx");
+						var naozhong = localStorage.getItem("nz");
 					}else{alert("浏览不支持localStorage")};
 	</script>
 	<script src="svg/iconfont.js" type="text/javascript" charset="utf-8"></script>
@@ -57,6 +60,19 @@
 		<header class="mui-bar mui-bar-nav">
 			<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" href="index.html" onclick="openSleep()"></a>
 			<h1 class="mui-title">开始睡眠</h1>
+			<audio src='http://hao.haolingsheng.com/ring/000/995/3e3966097062ba7638a0aba60d898b48.mp3' preload='auto' id='music1'>	
+			</audio>
+			
+			<audio src='http://hao.haolingsheng.com/ring/000/995/f1b408f77bc8d27a6f5665c1be02df5d.mp3' preload='auto' id='music2'>	
+			</audio>
+			
+			<audio src='http://hao.haolingsheng.com/ring/000/995/899004608491de178a7234ab5538feb9.mp3' preload='auto' id='music3'>	
+			</audio>
+			
+			<audio src='http://hao.haolingsheng.com/ring/000/995/3428620bff41797ca0fde66a1a47b0fc.mp3' preload='auto' id='music4'>	
+			</audio>
+			<audio src='http://hao.haolingsheng.com/ring/000/995/bde5a74a2520d82b8ed6d51c227f383c.mp3' preload='auto' id='music5'>	
+			</audio>
 		</header>
 		
 		<article class="htmleaf-container">
@@ -65,7 +81,7 @@
 					<span id="runner"></span><br><br>
 					<div class="col-sm-10 col-sm-offset-2">
 						<div class="col-xs-4 col-sm-3 centered"><button id="stopBtn" onclick="recordtime2()"></button></div>
-						<div class="col-xs-4 col-sm-3 centered"><button id="startBtn" onclick="recordtime1()"></button></div>
+						<div class="col-xs-4 col-sm-3 centered"><button id="startBtn" onclick="recordtime1();start_score()"></button></div>
 						<div class="col-xs-4 col-sm-3 centered"><button id="resetBtn"></button></div>
 					</div>
 				</div>
@@ -79,8 +95,78 @@
 		
 		<button type="button" class="returnreport" onclick="openReport()">返回报告</button>
 		
+		<script>
+			var arr = defaT.split(":");
+			var sethour = arr[0];
+			var setmin = arr[1];
+			if(setmin<naoxing*5){
+				sethour = sethour-1;
+				setmin = 60 - (5*naoxing - setmin);
+			
+			}
+			else{
+				setmin = setmin-5*naoxing;
+			}
+			var stop = document.getElementById("stopBtn");
+			window.onload=function(){
+			function showTime(){
+				var time=new Date();
+				var minute=time.getMinutes();
+				var hou=time.getHours();
+				var d1=hou>=sethour&&minute>=setmin;
+				var d2=hou>=sethour;
+				var dt = 1;
+				//此处设定dt=1为浅睡
+				if((d1||d2)&dt==1){
+					if(naozhong==1){
+					if(!music1.play()){music1.play();}//响铃
+						// alert("成功1");
+							//改变字体颜色为红色
+							}
+					if(naozhong==2){
+					if(!music2.play()){music2.play();}//响铃
+// 						alert("成功2");
+// 							//改变字体颜色为红色
+							}
+					if(naozhong==3){
+					if(!music3.play()){music3.play();}//响铃
+// 						alert("成功3");
+// 							//改变字体颜色为红色
+							}		
+					if(naozhong==4){
+					if(!music4.play()){music4.play();}//响铃
+// 						alert("成功4");
+// 							//改变字体颜色为红色
+							}	
+					if(naozhong==5){
+					if(!music5.play()){music5.play();}//响铃
+							//改变字体颜色为红色
+// 						alert("成功5");
+// 						
+	}	
+					}
+				else{music1.pause();
+				music2.pause();
+				music3.pause();
+				music4.pause();
+				music5.pause();}//同理
+			}
+			showTime();
+			var timer=setInterval(showTime,1000);
+			stop.onclick=function(){
+			sethour=24;
+			}}
+			
+		</script>
 	</body>
-
+<script>
+		var dt1=1;
+		var dt2=2;
+		var dt3=1;
+		var dt4=1;
+		var dt5=1;
+		var dt6=1;
+	</script>
 <script type="text/javascript">
 	function openReport(){
 	    mui.openWindow({
@@ -127,7 +213,20 @@
 				
 	        });
 	}
+	function sleepstate(){
+	        $.ajax({url:"http://203.195.148.111:8080/index/index/aiclock",
+			data: {dt1:dt1,dt2:dt2,dt3:dt3,dt4:dt4,dt5:dt5,dt6:dt6},
+			
+			success:function(data) {
+				// alert(data);
+				}
+				})
+	         }
+	 
 	
+	 function start_score(){
+	  dt=setInterval(sleepstate,2000);
+	  }
 </script>
 
 </html>
