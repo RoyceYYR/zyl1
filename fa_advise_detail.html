@@ -17,11 +17,12 @@
 			 //alert(un+pas);  
 			 }else{alert("浏览不支持localStorage")}  
 		</script>
+	<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
 </head>
 <body>
 	
 	<header class="mui-bar mui-bar-nav">
-		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" href="family_main.html" onclick="openID()"></a>	
+		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left" href="family_main_head.html" onclick="openID()"></a>	
 		<h1 class="mui-title">建议详情</h1>
 	</header>
 	
@@ -31,15 +32,20 @@
 		  <div class="products" >
 		    <div class="product active">
 		      <div class="thumbnail"><img src="img/sleep.png" /></div>
-		      <h1 class="title">早睡早起身体好</h1>
-		      <p class="description"> 最近您的睡眠状态并不好，质量差的睡眠也会影响血糖水平的浮动，建议早睡早起，保证充足睡眠，失眠时可以播放白噪音帮助睡眠。</p>
+		      <h1 class="title" id="imsg">早睡早起身体好</h1>
+		      <p class="description" id="dna"> 最近您的睡眠状态并不好，质量差的睡眠也会影响血糖水平的浮动，建议早睡早起，保证充足睡眠，失眠时可以播放白噪音帮助睡眠。</p>
 		    </div>  
 		  </div>
 		  <div class="footer"><button type="button" class="btn" id="known" style="text-align: center; width: 100px; left: 50%; margin-left: -50px;"  onclick="openMine()">我知道了</button></div>
 		</div>
 		
 	</article>
-	
+	<script>
+		var title = localStorage.getItem("title");
+		$("#imsg").html(title);
+		var msg = localStorage.getItem("msg");
+		$("#dna").html(msg);
+	</script>
 	<script src="js/stopExecutionOnTimeout.js?t=1" type="text/javascript"></script>
 	<script src="js/jquery-1.11.0.min.js"></script>
 	<script type="text/javascript">
