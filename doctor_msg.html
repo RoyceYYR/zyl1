@@ -89,6 +89,10 @@
 			            <p>Miro Badev</p>
 			            <span>miro@badev@gmail.com</span>
 			        </div>
+
+			 
+			        <div action="" method="get" id="sendmessage" style="top: 153px;">	
+
 			        <!-- <div id="chat-messages">
 			        	<label>2019/05/20</label>
 			            
@@ -142,10 +146,12 @@
 			        	<!-- <input type="text" value="Send message..." />
 			            <input type="submit" name="" id="" value="发送" /> -->
 			        <div action="" method="get" id="sendmessage">	
+
 			        	<input type="text" name="title" id="title" value="请输入文章标题" />
 			        	<textarea  name="body" id="body"  placeholder="请输入文章内容"></textarea>
 			        	<input type="submit" name="" id="submit" onclick="send()" value="发送" />
 			        </div>
+
 			    </div>        
 			</div>	
 		
@@ -303,6 +309,7 @@
 					 
 					success: function(data){
 						alert(data)
+
 					     }
 				});
 			}
