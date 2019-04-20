@@ -9,12 +9,18 @@
 <link href="css/blood/bs_main.css" rel="stylesheet"/>
 <script type="text/javascript" charset="utf-8">
       	mui.init();
+		if(window.localStorage){  
+		var un = localStorage.getItem("username");  
+		var pas = localStorage.getItem("password");  
+		//alert(un+pas);  
+		}else{alert("浏览不支持localStorage")} 
     </script>
+<script src="js/jquery-1.11.0.min.js"></script>
 </head>
 <body>
 <div class="wrapper">
 	<a href="#"> 
-	<span class="tupian" onclick="openBsvalue();" style="background: #1EBAF0;font-size: 16px;text-align: center;">当前血糖:5mol/L</span>
+	<span class="tupian" onclick="openBsvalue();" style="background: #1EBAF0;font-size: 16px;text-align: center;" id="bs">当前血糖:5mol/L</span>
 	</a> 
 	</div>
 <br />
@@ -26,12 +32,12 @@
 <div class="mui-card-header mui-card-media">
 	<img src="img/Dr.X.jpeg" />
 	<div class="mui-media-body">
-		Dr.X
-		<p>发表于 2019-01-30 15:30</p>
+		<p id="dna">Dr.</p>
+		<p>发表于 2019-04-21 </p>
 	</div>
 </div>
 	<div class="mui-card-content">
-		<h6>减少淀粉摄入，增加蛋白摄入</h6>
+		<h6 id="imsg">减少淀粉摄入，增加蛋白摄入</h6>
 	</div>
 </div>
 <br />
@@ -81,6 +87,11 @@
 		{}
 		});
 	}
-
+    var dna = localStorage.getItem("dna");
+    $("#dna").html(dna);
+    var msg = localStorage.getItem("msg");
+    $("#imsg").html(msg);
+	var bs = localStorage.getItem("bs");
+	$("#bs").html("当前血糖："+bs+"mol/L");
 </script>
 </html>
