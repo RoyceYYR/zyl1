@@ -152,7 +152,7 @@
 							
 	                        <li role="presentation" class="active" id="1" ><a href="#Section1" aria-controls="home" role="tab" data-toggle="tab" >血糖曲线</a></li>
 	                        <li role="presentation" id="2" ><a href="#Section2" aria-controls="profile" role="tab" data-toggle="tab" >今日提醒</a></li>
-	                        <li role="presentation" id="3" ><a href="#Section3" aria-controls="messages" role="tab" data-toggle="tab" >历史提醒</a></li>
+	                        <li role="presentation" id="3" ><a href="#Section3" aria-controls="messages" role="tab" data-toggle="tab" >相关咨询</a></li>
 	                    </ul>
 	                    <!-- Tab panes -->
 	                    <div class="tab-content tabs">
@@ -180,12 +180,12 @@
 				                            <img src="img/sleep.png" alt=""/>
 				                        </div> -->
 				                        <ul class="post-bar">
-				                            <li><i class="fa fa-users"></i> <a href="mine_doctor_inf.html">发布者：Dr.X</a></li>
-				                            <li><i class="fa fa-clock-o"></i> 发布时间：2019/01/01</li>
+				                            <li><i class="fa fa-users"></i> <a href="mine_doctor_inf.html" id="dna">发布者：Dr.X</a></li>
+				                            <li><i class="fa fa-clock-o"></i> 发布时间：2019/04/21</li>
 				               
 				                        </ul>
 				                        <p class="post-description">
-				                           <h2>最近睡眠不太好，今天记得早睡哦～</h2> 
+				                           <h2 id="msg">最近睡眠不太好，今天记得早睡哦～</h2> 
 				                        </p>
 				                        <a onclick="openAdvice()" class="read-more">点此查看建议详情</a><br>
 <!-- 										<a onclick="openHistory()" class="read-more" style="color: #000099;">点此查看历史提醒</a> -->
@@ -201,35 +201,36 @@
 	                            <!-- <h3>Section 3</h3>
 	                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce semper, magna a ultricies volutpat, mi eros viverra massa, vitae consequat nisi justo in tortor. Proin accumsan felis ac felis dapibus, non iaculis mi varius.</p>
 								 -->
-								 <ul class="mui-table-view">
-    <li class="mui-table-view-cell mui-media">
-        <a onclick="openZX()">
-            <img class="mui-media-object mui-pull-left" src="img/Rabbit.svg">
-            <div class="mui-media-body">
-                饮食
-                <p class="mui-ellipsis">糖尿病人吃什么好呢？是不是促进血糖降低的就好呢？</p>
-            </div>
-        </a>
-    </li>
-    <li class="mui-table-view-cell mui-media">
-        <a href="javascript:;">
-            <img class="mui-media-object mui-pull-left" src="img/Bear.svg">
-            <div class="mui-media-body">
-                血糖
-                <p class="mui-ellipsis">用胰岛素的病人注意随身带几粒糖在身上，以防出现低血糖</p>
-            </div>
-        </a>
-    </li>
-    <li class="mui-table-view-cell mui-media">
-        <a href="javascript:;">
-            <img class="mui-media-object mui-pull-left" src="img/Fox.svg">
-            <div class="mui-media-body">
-                控盐
-                <p class="mui-ellipsis">饮食控盐有讲究</p>
-            </div>
-        </a>
-    </li>
-</ul>
+								 <ul class="mui-table-view" >
+								     <li class="mui-table-view-cell mui-media" style="height: 80px;">
+								         <a href="http://tv.cctv.com/lm/jkzl/" style="width: auto;">
+								             <img class="mui-media-object mui-pull-left" src="img/Fox.svg" style="margin: 10px;">
+								             <div class="mui-media-body">
+								                 <h4>健康之路</h4> 
+								                 <p class="mui-ellipsis">和广大糖友一起交流糖尿病防治心得</p>
+								             </div>
+								         </a>
+								     </li>
+								     <li class="mui-table-view-cell mui-media" style="height: 80px;">
+								         <a href="http://bbs.tnbz.com/">
+								             <img class="mui-media-object mui-pull-left" src="img/Bear.svg" style="margin: 10px;">
+								             <div class="mui-media-body">
+								                 <h4>糖尿病论坛</h4> 
+								                 <p class="mui-ellipsis">和广大糖友一起交流糖尿病防治心得</p>
+								             </div>
+								         </a>
+								     </li>
+								     <li class="mui-table-view-cell mui-media" style="height: 80px;">
+								         <a href="https://dxy.com/">
+								             <img class="mui-media-object mui-pull-left" src="img/Mouse.svg" style="margin: 10px;">
+								             <div class="mui-media-body">
+								                 <h4>丁香医生</h4> 
+								                 <p class="mui-ellipsis">主要由「科普文章」「疾病问答」「就医推荐查询」「健康小组」等核心板块组成</p>
+								             </div>
+								         </a>
+								     </li>
+								 </ul>
+								 	
 							</div>
 	                    </div>
 	                </div>
@@ -417,6 +418,19 @@
 					 $("#slp").html(arr1[6]);
 					     }
 		         });
+		$.ajax({
+					 url:"http://203.195.148.111:8080/index/index/pimsg",
+					 data:{un:un},
+					 
+					success: function(data){
+					 var arr1 = data.split("|");
+					 $("#msg").html(arr1[2]);
+					  $("#dna").html("发布者： "+arr1[1]);
+					  localStorage.setItem("msg",arr1[0]);
+					  localStorage.setItem("dna",arr1[1]);
+					  localStorage.setItem("title",arr1[2]);
+					     }
+		         });
 		function openBlood(){
 		    mui.openWindow({
 			url    : 'blood_main_head.html',
@@ -462,5 +476,19 @@
 			{}
 		    });
 		}
+	</script>
+        <script>
+		
+		window.onclick = function(event) {
+		var date=document.getElementById("date").value;
+		$.ajax({url:"http://203.195.148.111:8080/index/index/checkbyday",
+		data: {un:un,date:date},
+		success:function(data) {
+			var arr1 = data.split("|");
+			$("#score").html(arr1[1]);
+			$("#slp").html(arr1[0].substring(0,1));
+			}
+	     })
+		 }
 	</script>
 </html>
