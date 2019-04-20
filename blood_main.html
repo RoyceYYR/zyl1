@@ -18,9 +18,23 @@
 <script src="js/jquery-1.11.0.min.js"></script>
 </head>
 <body>
+<script type="text/javascript">
+		window.onload=function(){
+			if(window.localStorage){
+					 	var bs = localStorage.getItem("bloodsugar");
+						
+					function showBS(bs){
+						var sugar = document.getElementById("sugar");
+						sugar.innerHTML = bs;
+					}
+					showBS(bs);
+					var timer=setInterval(showBS(bs),1000);
+					}else{alert("浏览不支持localStorage")};
+					}
+	</script>
 <div class="wrapper">
 	<a href="#"> 
-	<span class="tupian" onclick="openBsvalue();" style="background: #1EBAF0;font-size: 16px;text-align: center;" id="bs">当前血糖:5mol/L</span>
+	<div class="tupian" onclick="openBsvalue();" style="background: #1EBAF0;font-size: 16px;text-align: center;"><span id="sugar">当前血糖:5mmol/L</span></div>
 	</a> 
 	</div>
 <br />
@@ -91,7 +105,6 @@
     $("#dna").html(dna);
     var msg = localStorage.getItem("msg");
     $("#imsg").html(msg);
-	var bs = localStorage.getItem("bs");
-	$("#bs").html("血糖："+bs+"mM/L");
+	
 </script>
 </html>
