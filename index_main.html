@@ -203,29 +203,29 @@
 								 -->
 								 <ul class="mui-table-view" >
 								     <li class="mui-table-view-cell mui-media" style="height: 80px;">
-								         <a href="http://tv.cctv.com/lm/jkzl/" style="width: auto;">
+								         <a  style="width: auto;" onclick="open1()">
 								             <img class="mui-media-object mui-pull-left" src="img/Fox.svg" style="margin: 10px;">
 								             <div class="mui-media-body">
-								                 <h4>健康之路</h4> 
-								                 <p class="mui-ellipsis">和广大糖友一起交流糖尿病防治心得</p>
+								                 <h4>糖尿病人的饮食</h4> 
+								                 <p class="mui-ellipsis">糖尿病人吃什么好呢？是不是促进血糖降低的就好呢？</p>
 								             </div>
 								         </a>
 								     </li>
 								     <li class="mui-table-view-cell mui-media" style="height: 80px;">
-								         <a href="http://bbs.tnbz.com/">
+								         <a style="width: auto;" onclick="open2()">
 								             <img class="mui-media-object mui-pull-left" src="img/Bear.svg" style="margin: 10px;">
 								             <div class="mui-media-body">
-								                 <h4>糖尿病论坛</h4> 
-								                 <p class="mui-ellipsis">和广大糖友一起交流糖尿病防治心得</p>
+								                 <h4>糖尿病足会出现的几个异常</h4> 
+								                 <p class="mui-ellipsis">不想感受糖尿病足的痛，几件预防小事要记在心上。</p>
 								             </div>
 								         </a>
 								     </li>
 								     <li class="mui-table-view-cell mui-media" style="height: 80px;">
-								         <a href="https://dxy.com/">
+								         <a style="width: auto;" onclick="open3()">
 								             <img class="mui-media-object mui-pull-left" src="img/Mouse.svg" style="margin: 10px;">
 								             <div class="mui-media-body">
-								                 <h4>丁香医生</h4> 
-								                 <p class="mui-ellipsis">主要由「科普文章」「疾病问答」「就医推荐查询」「健康小组」等核心板块组成</p>
+								                 <h4>有效预防糖尿病足</h4> 
+								                 <p class="mui-ellipsis">糖尿病患者在生活只需要做好一些事情，就可以有效预防糖尿病足发生。</p>
 								             </div>
 								         </a>
 								     </li>
@@ -469,9 +469,23 @@
 			{}
 		    });
 		}
-		function openZX(){
+		function open1(){
 		    mui.openWindow({
 			url    : 'index_zx1.html',
+			extras :
+			{}
+		    });
+		}
+		function open2(){
+		    mui.openWindow({
+			url    : 'index_zx2.html',
+			extras :
+			{}
+		    });
+		}
+		function open3(){
+		    mui.openWindow({
+			url    : 'index_zx3.html',
 			extras :
 			{}
 		    });
