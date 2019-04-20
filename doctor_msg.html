@@ -90,6 +90,7 @@
 			            <span>miro@badev@gmail.com</span>
 			        </div>
 
+
 			 
 			        <div action="" method="get" id="sendmessage" style="top: 153px;  ">	
 
@@ -143,15 +144,15 @@
 			            
 			        </div>
 			    	 -->
+			        
 			        	<!-- <input type="text" value="Send message..." />
 			            <input type="submit" name="" id="" value="发送" /> -->
-			        <div action="" method="get" id="sendmessage">	
-
+			        <div action="" method="get" id="sendmessage">
 			        	<input type="text" name="title" id="title" value="请输入文章标题" />
 			        	<textarea  name="body" id="body"  placeholder="请输入文章内容"></textarea>
 			        	<input type="submit" name="" id="submit" onclick="send()" value="发送" />
 			        </div>
-
+			    
 			    </div>        
 			</div>	
 		
@@ -283,7 +284,16 @@
 					     }
 		         });
 		var pna=localStorage.getItem("pna");
-		
+		$.ajax({
+					 url:"http://203.195.148.111:8080/index/index/show_d_info",
+					 withCredentials:true,
+					 data:{un:un},
+					success: function(data){
+					 var arr1 = data.split("|");
+					  window.localStorage["dna"]=(arr1[0]);
+					     }
+		        });
+		var dna=localStorage.getItem("dna");
 		$.ajax({
 					 url:"http://203.195.148.111:8080/index/index/showpatient",
 					 withCredentials:true,
@@ -305,14 +315,14 @@
 				var body=document.getElementById("body").value;
 				$.ajax({
 					 url:"http://203.195.148.111:8080/index/index/imsg",
-					 data: {un:un,pna:pna,body: body,title:title},
+					 data: {dna:dna,pna:pna,body:body,title:title},
 					 
-					success: function(data){
-						alert(data)
-
+					success: function(){
+						alert("发送成功")
 					     }
 				});
 			}
 		</script>
 </body>
 </html>
+

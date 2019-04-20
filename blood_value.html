@@ -40,17 +40,17 @@
     </div>
 	<div class="mui-input-row">
 	    <label>血糖值</label>
-	    <input type="text" class="mui-input-clear" id="xbs" placeholder="请输入血糖值(mol/L)">
+	    <input type="text" class="mui-input-clear" id="xbs" placeholder="请输入血糖值(mmol/L)" onchange="console.log('Time changed')">
 	</div>
     <div class="mui-button-row">
-        <button type="button" class="mui-btn mui-btn-outlined" onclick="storebsdata();">确认</button>
+        <button type="button" class="mui-btn mui-btn-outlined"  onclick="storebsdata();">确认</button>
         <button type="button" class="mui-btn mui-btn-outlined" onclick="openBlood();" >取消</button>
     </div>
 </form>
 
 <br />
 <div style="text-align:center">
-<button type="button" class="bluebutton" onclick="openBlood();">返回</button>
+<button type="button" class="bluebutton"  id= "submit" onclick="openBlood();">返回</button>
 </div>
 <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
 <script>
@@ -58,6 +58,7 @@
             var xtime = $("#xtime").val();
 			var xwhen = $("#xwhen").val();
             var xbs = $("#xbs").val();
+			
             $.ajax({
 				 url:"http://203.195.148.111:8080/index/index/store_bsdata",
 				 type: "post",
@@ -69,6 +70,20 @@
             });
      } 
 </script>
+	<script>
+			 $(document).ready(function () {
+			 	$("#submit").click(function(){
+					var xt = $("#xbs").val();
+					if(window.localStorage){		
+						var xt = document.getElementById("xbs").value;
+						var bs = "当前血糖:"+xt+"mmol/L"
+					 	localStorage.setItem("bloodsugar",bs);
+					}else{alert("浏览不支持localStorage")}				
+					
+				});
+			 })
+			
+	</script>
 
 </body>
 <script type="text/javascript">
