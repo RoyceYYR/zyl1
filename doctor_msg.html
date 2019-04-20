@@ -30,46 +30,46 @@
 						    <input type="text" id="searchfield" value="搜索联系人" />
 						</div>
 			        	<div class="friend">
-			            	<img src="img/1_copy.jpg" />
-			                <p>
-			                	<strong>张三</strong><br>
-								<span>糖友号：XXXXXX</span>
+			            	<img src="images/touxiang.jpg" />
+			                <p onclick="open1()">
+			                	<strong id="patient1">张三</strong><br>
+								<span>病人编号：1</span>
 								</p>
 			                <div class="status available"></div>
 			            </div>
 			            
 			            <div class="friend">
-			            	<img src="img/2_copy.jpg" />
-			                <p>
-			                	<strong>张三</strong><br>
-			                	<span>糖友号：XXXXXX</span>
+			            	<img src="images/touxiang.jpg" />
+			                <p onclick="open2()">
+			                	<strong id="patient2">张三</strong><br>
+			                	<span>病人编号：2</span>
 			                </p>
 			                <div class="status away"></div>
 			            </div>
 			            
 			            <div class="friend">
-			            	<img src="img/3_copy.jpg" />
-			                <p>
-			                	<strong>张三</strong><br>
-			                	<span>糖友号：XXXXXX</span>
+			            	<img src="images/touxiang.jpg" />
+			                <p onclick="open3()">
+			                	<strong id="patient3">张三</strong><br>
+			                	<span>病人编号：3</span>
 			                </p>
 			                <div class="status inactive"></div>
 			            </div>
 			            
 			            <div class="friend">
-			            	<img src="img/4_copy.jpg" />
-			                <p>
-			                	<strong>张三</strong><br>
-			                	<span>糖友号：XXXXXX</span>
+			            	<img src="images/touxiang.jpg" />
+			                <p onclick="open4()">
+			                	<strong id="patient4">张三</strong><br>
+			                	<span>病人编号：4</span>
 			                </p>
 			                <div class="status inactive"></div>
 			            </div>
 			            
 			            <div class="friend">
-			            	<img src="img/5_copy.jpg" />
-			                <p>
-			                <strong>张三</strong><br>
-			                <span>糖友号：XXXXXX</span>
+			            	<img src="images/touxiang.jpg" />
+			                <p onclick="open5()">
+			                <strong id="patient5">张三</strong><br>
+			                <span>病人编号：5</span>
 			                </p>
 			                <div class="status inactive"></div>
 			            </div>
@@ -89,71 +89,45 @@
 			            <p>Miro Badev</p>
 			            <span>miro@badev@gmail.com</span>
 			        </div>
-			        <!-- <div id="chat-messages">
-			        	<label>2019/05/20</label>
-			            
-			            <div class="message">
-			            	<img src="img/1_copy.jpg" />
-			                <div class="bubble">
-			                	嘤嘤嘤我昨天又没有睡着
-			                    <div class="corner"></div>
-			                    <span>3 分钟前</span>
-			                </div>
-			            </div>
-			            
-			            <div class="message right">
-			            	<img src="img/2_copy.jpg" />
-			                <div class="bubble">
-			                	乖，可以数羊
-			                    <div class="corner"></div>
-			                    <span>1 分钟前</span>
-			                </div>
-			            </div>
-			            
-			            <div class="message">
-			            	<img src="img/1_copy.jpg" />
-			                <div class="bubble">
-			                	好哒，医生你好赞哦！
-			                    <div class="corner"></div>
-			                    <span>1分钟前</span>
-			                </div>
-			            </div>
-			            
-			            <div class="message right">
-			            	<img src="img/2_copy.jpg" />
-			                <div class="bubble">
-			                	你能将睡眠报告分享一下吗
-			                    <div class="corner"></div>
-			                    <span>1 分钟前</span>
-			                </div>
-			            </div>
-			            
-			            <div class="message">
-			            	<img src="img/1_copy.jpg" />
-			                <div class="bubble">
-			                	我发过来啦，你接住哦！
-			                    <div class="corner"></div>
-			                    <span>刚刚</span>
-			                </div>
-			            </div>
-			            
-			        </div>
-			    	 -->
-			        <form action="" method="get" id="sendmessage">
-			        	<!-- <input type="text" value="Send message..." />
-			            <input type="submit" name="" id="" value="发送" /> -->
-			        	
+			 
+			        <div action="" method="get" id="sendmessage" style="top: 153px;">	
 			        	<input type="text" name="title" id="title" value="请输入文章标题" />
 			        	<textarea  name="body" id="body"  placeholder="请输入文章内容"></textarea>
 			        	<input type="submit" name="" id="submit" onclick="send()" value="发送" />
-			        </form>
-			    
+			        </div>
+					
 			    </div>        
 			</div>	
 		
 		
 	</div>
-	
+	<script type="text/javascript">
+		function open1(){
+			window.localStorage["a"]=1;
+		    
+		}
+		
+		function open2(){
+			window.localStorage["a"]=2;
+		    
+		}
+		
+		function open3(){
+			window.localStorage["a"]=3;
+		    
+		}
+		
+		function open4(){
+			window.localStorage["a"]=4;
+		    
+		}
+		
+		function open5(){
+			window.localStorage["a"]=5;
+		   
+		}
+		
+	</script>
 	<script src="js/jquery-1.11.0.min.js"></script>
 		<script>
 		$(document).ready(function () {
@@ -241,20 +215,48 @@
 		        });
 		    });
 		});
-		function send(){
-			var title=document.getElementById("title").value;
-			var body=document.getElementById("body").value;
-			alert("发送成功！")
-			$.ajax({
-				 url:"http://203.195.148.111:8080/index/index/store_rgdata",
-				 withCredentials:true,
-				 data: {title: title ,body: body},
-				 
-				success: function(data){
-					alert("发送成功！")
-				     }
-			});
-		}
+		var a=localStorage.getItem("a");
+		$.ajax({
+					 url:"http://203.195.148.111:8080/index/index/showpatient",
+					 withCredentials:true,
+					 data:{un:un},
+					 
+					success: function(data){
+					 var arr1 = data.split("|");
+					 window.localStorage["pna"]=arr1[(a*3-3)];
+					     }
+		         });
+		var pna=localStorage.getItem("pna");
+		
+		$.ajax({
+					 url:"http://203.195.148.111:8080/index/index/showpatient",
+					 withCredentials:true,
+					 data:{un:un},
+					 
+					success: function(data){
+					 var arr1 = data.split("|");
+					 $("#patient1").html(arr1[0]);
+					 $("#patient2").html(arr1[3]);
+					 $("#patient3").html(arr1[6]);
+					 $("#patient4").html(arr1[9]);
+					 $("#patient5").html(arr1[12]);
+					     }
+		         });
+		</script>
+		<script>
+			function send(){
+				var title=document.getElementById("title").value;
+				var body=document.getElementById("body").value;
+				$.ajax({
+					 url:"http://203.195.148.111:8080/index/index/imsg",
+					 data: {un:un,pna:pna,body: body,title:title},
+					 
+					success: function(data){
+						alert(data)
+						alert("发送成功！")
+					     }
+				});
+			}
 		</script>
 </body>
 </html>
